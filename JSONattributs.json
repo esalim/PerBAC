@@ -1,0 +1,25 @@
+{
+  "organization": {
+    "name":"21Street",
+    "organizationIdentifer":"50",
+    "description":"lavie n'est pas facile",
+	"secteur":"militaire"
+  },
+
+  "subject":{
+    "name":"Mamadou",
+    "poste":"comptable",
+    "userId":"18",
+	"habilitation":"eleve"
+  },
+
+"objecte":{
+	"name":"repertoire",
+	"categorie":"donnees"
+	},
+
+"action":{
+	"actiontype":"lire"
+	}
+
+}

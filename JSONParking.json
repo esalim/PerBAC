@@ -1,0 +1,30 @@
+{
+  "zoneA": {
+    "place0": "occupe",
+    "place1": "",
+    "place2": "",
+    "place3": "occupe",
+    "place4": "",
+    "place6": "occupe",
+    "place7": "occupe",
+    "place8": "occupe"
+  },
+  "zoneB": {
+    "place1": "occupe",
+    "place2": "",
+    "place3": "occupe",
+    "place4": "",
+    "place5": "",
+    "place6": "occupe",
+    "place7": "occupe"
+  },
+  "zoneC": {
+    "place1": "occupe",
+    "place2": "",
+    "place3": "occupe",
+    "place4": "",
+    "place5": "occupe",
+    "place6": ""
+  }
+}
+
