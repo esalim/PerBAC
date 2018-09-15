@@ -10,33 +10,6 @@ Nous choisissons de construire notre modèle basé principalement sur ABAC comme
 Pour implémenter le modèle PerBAC, nous devons définir les exigences d'un environnement IoT standard en matière de contrôle d'accès. Il est clair qu'un environnement IoT pourrait avoir des exigences différentes changeant d'un contexte à l'autre. Cependant, sans certaines exigences globales qui entourent les situations IoT standard, nous ne pouvons pas définir un modèle CA qui les traitera avec efficacité.
 
 
-Fonctionnnement
----------------
-
-Nous pouvons supposer que les attributs globaux seront collectés par le nœud central dans une architecture hybride précédemment citée.
-
-Perbac se base sur 3 entites a savoir :
-
-`Policy Information Point`
-
-`Policy Access Point`
-
-`Policy Decision Point`
-
-**Policy Information Point**
-
-PIP(Policy Information Point) comme son nom l'indique est en rapport avec les infos.En effet c'est l'entite qui  est charge d'extraire des infos supplementaires sur le User dans la base de donnees. le fichier **JSONattributs.json** contient les infos sur chaque User du parking.l'extraction des infos supplementaires permettra un meilleur controle
-
-**Policy Access Point**
-
-Entite qui permet la gestion des politiques d'acces aux ressources demandees.Les Permissions sont dans le fichier **JSONPermission.json** .
-
-**Policy Decision Point**
-
-PDP(Policy Decision Point) joue le role du maestro dans un orchestre. En effet c'est l'entite qui coordonne toutes  ces connexions.Elle recoit les donnees du noeud central et envoie une requete au PIP a fin d'extraire les informations supplementaires du USER. PDP enverra une requete au PAP pour la verification de la permission. 
-
-
-
 
 
 Prérequis 
