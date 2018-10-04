@@ -1,0 +1,13 @@
+{
+    "name": "djibril/rbac",
+    "type": "project",
+    "license": "MIT",
+    "require": {
+        "zendframework/zend-permissions-rbac": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MIT\\": "src/"
+        }
+    }
+}
