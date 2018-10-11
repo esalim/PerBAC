@@ -197,5 +197,9 @@ java.lang.Object obj = null;
            }
     }
 ```
+ Nous considérerons deux zones: une zone standard accessible à tous (public) dans le cadre d'un marché public et une zone réservée aux personnes à mobilité réduite (PRM) gérée par un contrat privé. Les PRM sont identifiés par un badge (badge bleu).
+
+La personne peut présenter un badge d'identification PRM. Dans le cas où le sujet présente un badge PRM, le nœud central pour PRM (CN_PRM) est consulté en priorité. Dans l'autre cas, c'est la Norme de nœud central (CN_STANDARD) qui est consultée en priorité.
+
 
  
