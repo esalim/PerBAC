@@ -41,14 +41,33 @@ Nous avons dans cet exemple une verification de controle d'acces par le modele P
  
 
     public static void main(String[] args) throws Exception {
-       Organisation org = new Organisation("21Street",50,"militaire");
-        Subject sub=new Subject("Mamadou","comptable",18);
-        Ressource re=new Ressource(("repertoire"));
-        Action ac =new Action("lire");
-        Requester req = new Requester(org,sub);
-        ParkingPlace par=new ParkingPlace(re,ac);
-    PolicyDecisionPoint pdp=new PolicyDecisionPoint(req,par);
-            pdp.validation();
+    Scanner sc=new Scanner(System.in);
+        System.out.println("---------ORGANISATION----------");
+        System.out.println("Nom :");
+        String name =sc.nextLine();
+        System.out.println("Id:");
+        int id = sc.nextInt();
+        System.out.println("Description:");
+        String bab =sc.nextLine();
+        Organisation org = new Organisation(name,id,bab);
+         System.out.println("---------SUBJECT----------");
+        System.out.println("Nom :");
+        String name1 =sc.nextLine();
+        System.out.println("Poste :");
+        String poste =sc.nextLine();
+        System.out.println("Id:");
+        int id1 =sc.nextInt();
+        System.out.println("Bagde_blue :");
+        boolean bool =sc.nextBoolean();
+        Subject sub=new Subject(name1,poste,id1,bool);
+        System.out.println("-------Ressource--------- ");
+        System.out.println("Nom:");
+        String baba =sc.nextLine();
+        Ressource re=new Ressource(baba);
+        System.out.println("-------ACTION--------- ");
+        System.out.println("ActionType:");
+        String name3 =sc.nextLine();
+        Action ac =new Action(name3);
     }
 
 
@@ -57,7 +76,8 @@ Nous avons dans cet exemple une verification de controle d'acces par le modele P
 
 fichier contenant la politique d'acces du Modele:
 
-`{
+```
+{
 "orgaizationname":"21Street",
 "subjectname":"Mamadou",
 "subjectposte":"comptable",
@@ -65,12 +85,13 @@ fichier contenant la politique d'acces du Modele:
 "actiontype":"lire",
 "comportement":"bon",
 "autorisation":"accepte"
-}`
+}
+```
 
 l'attribution de la permission ne dependra pas seulement des attributs  du USER .Elle dependra aussi du comportement du User dans le parking lors d'une visite.
 
 
-Collaboration
+Offloading
 -------------
 
 
@@ -147,5 +168,34 @@ Creer un repertoire dans le dossier '/var/www/html/' .Copie et colle le code sui
 			e.printStackTrace();
 	}}
 
+Collaboration
+-------------
 
+L'exigence communicative de l'IoT nous oblige à nous libérer de l'architecture centralisée. Pour ce faire, nous avons choisi d'étendre notre modèle en fournissant une couche collaborative entre organisations, cette couche permettra aux sujets d'une organisation  de bénéficier d'objets qui ne sont pas nécessairement dans la même organisation
 
+```
+java.lang.Object obj = null;
+      try {
+            obj = new JSONParser().parse(new FileReader("JSONattributs.json"));
+        } catch (IOException e) {
+            System.out.println("fichier non ouvert ");
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        JSONObject objet1 = (JSONObject) obj;
+        JSONObject sousObjet1 = (JSONObject) objet1.get("organization");
+        JSONObject sousObjet2 = (JSONObject) objet1.get("subject");
+        if(sousObjet1.get("name").equals(org.getName()) && !(sousObjet2.get("name").equals(sub.getName())))
+        {
+            System.out.println("Vouns ne faites pas parti de cette orgnisation ,Veuillez presente votre badge_blue ");
+            if (sub.isBadge_blue()) {
+                new CentralNode_DP(req, par);
+            } else {
+
+                new CentralNode_STANDARD(req,par);
+            }
+           }
+    }
+```
+
+ 
