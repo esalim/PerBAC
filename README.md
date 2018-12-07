@@ -3,41 +3,39 @@ Pervasive Based Access Control Model
 
  Introduction 
 ------------
-Cette bibiotheque permet une implementation pratique du modele d'acces **PerBAC**.
 
-Nous choisissons de construire notre modèle basé principalement sur ABAC comme un modèle global AC standard  qui, d'une part utilise le concept d'attributs très avantageux dans les environnements décentralisés IoT, et d'autre part inclut plusieurs concepts abstraits et autres modèles AC génériques tels que RBAC. 
+This library allows a practical implementation of the **PerBAC** access control model.
 
-Pour implémenter le modèle PerBAC, nous devons définir les exigences d'un environnement IoT standard en matière de contrôle d'accès. Il est clair qu'un environnement IoT pourrait avoir des exigences différentes changeant d'un contexte à l'autre. Cependant, sans certaines exigences globales qui entourent les situations IoT standard, nous ne pouvons pas définir un modèle CA qui les traitera avec efficacité.
-
-
+We choose to build our model based mainly on ABAC as a standard global AC model that, on the one hand, uses the concept of attributes very advantageous in decentralized IoT environments, and on the other hand includes the benefits of several abstract concepts and other generic AC models such as RBAC.
 
 
 Prérequis 
 -----------
-Installer java-JDK :
+Install java-JDK :
 
 `sudo apt-get install openjdk-7-jdk`
 
-Cloner PerBAC :
+Clone PerBAC :
 
 `git clone https://github.com/esalim/PerBAC.git`
 
-Telecharger la bibiotheque JSON :
+Download the library JSON :
 
 `https://jar-download.com/artifacts/org.json`
 
-Importer la bibliotheque:
+Import the library:
 
 `javac -cp json-20180813.jar yourfilename.java `.
 
 
-Exemple
+Example
 -------
-Nous avons dans cet exemple une verification de controle d'acces par le modele PerBAC.
 
- Un user possede des cacteristiques(attributs) et veut acceder a une ressource pour effectuer une tache bien definie.
+Let's take an access control verification by the PerBAC model.
+
+ A user has attributes (characteristics) and wants to access a resource to perform an action.
  
- Par exemple ,nous pouvons avoir le code suivant :
+ For example, we can have the following code:
  
 
     public static void main(String[] args) throws Exception {
@@ -74,7 +72,7 @@ Nous avons dans cet exemple une verification de controle d'acces par le modele P
  
 **JSONPermisson.json**
 
-fichier contenant la politique d'acces du Modele:
+File containing the AC policy of the model:
 
 ```
 {
@@ -88,19 +86,14 @@ fichier contenant la politique d'acces du Modele:
 }
 ```
 
-l'attribution de la permission ne dependra pas seulement des attributs  du USER .Elle dependra aussi du comportement du User dans le parking lors d'une visite.
-
+Granting the permission will not only depend on the attributes of the USER, but also on the behaviour of this latter in the smart parking during his visit.
 
 Offloading
 -------------
 
+The main advantage of Perbac is that it allows control decentralization to be carried without losing the effectiveness of ABAC and RBAC. The class **AvailabiltyManager** allows to control the availability of the parking places in case there is a request. It sends this state to a server that will store the data in a file **serverParking.txt**. 
 
-
-
-L'atout principal du model **Perbac** est de premettre la realisation de la decentralisation du controle tout en restant efficace comme ABAC et RBAC. La classe  **AvailibilityManager** permet de controler la disponibilite des places du parking au cas ou il y a aura une demande.Elle envoie cet etat a un serveur qui stockera la donnees dans un fichier **serveurParking.txt**. Ainsi tous noeuds souhaitant connaitre l'etat du parking se conectera au serveur.
-
-Comme exemple, nous pouvons avoir le code suivant :
-
+As an example, we can have the following code:
 
 **Client**
 
@@ -134,14 +127,13 @@ public void makeAvailibility()
 
 **Serveur**
 
-Installer un serveur:
+Install a server:
 
 `sudo apt-get install apache2`
 
 
 
-Creer un repertoire dans le dossier '/var/www/html/' .Copie et colle le code suivant dans un fichier.java dans le repertoire que vous avez cree 
-
+Create a directory in the folder '/var/www/html/' . Copy and paste the following code into a .java file in the directory you created
 
 
 
@@ -171,7 +163,7 @@ Creer un repertoire dans le dossier '/var/www/html/' .Copie et colle le code sui
 Collaboration
 -------------
 
-L'exigence communicative de l'IoT nous oblige à nous libérer de l'architecture centralisée. Pour ce faire, nous avons choisi d'étendre notre modèle en fournissant une couche collaborative entre organisations, cette couche permettra aux sujets d'une organisation  de bénéficier d'objets qui ne sont pas nécessairement dans la même organisation
+The communicative requirement of the IoT forces us to leave out centralized architectures. To do so, we have chosen to extend our model by providing a collaborative layer between organizations, this layer will allow the subjects of an organization to benefit from objects that are not necessarily in the same organization
 
 ```
 java.lang.Object obj = null;
@@ -197,9 +189,8 @@ java.lang.Object obj = null;
            }
     }
 ```
- Nous considérerons deux zones: une zone standard accessible à tous (public) dans le cadre d'un marché public et une zone réservée aux personnes à mobilité réduite (PRM) gérée par un contrat privé. Les PRM sont identifiés par un badge (badge bleu).
 
-La personne peut présenter un badge d'identification PRM. Dans le cas où le sujet présente un badge PRM, le nœud central pour PRM (CN_PRM) est consulté en priorité. Dans l'autre cas, c'est la Norme de nœud central (CN_STANDARD) qui est consultée en priorité.
+ We will consider two zones: a standard zone accessible to all (public) via a public contract and an area reserved for people with reduced mobility (PRM) managed by a private contract. PRMs are identified by a badge (blue badge).
 
-
+The person may present a PRM identification badge. If the subject has a PRM badge, the central node for PRM (CN_PRM) is consulted first. Otherwise, it's the Central Node Standard (CN_STANDARD) that is consulted first.
  
