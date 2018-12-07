@@ -9,7 +9,7 @@ This library allows a practical implementation of the **PerBAC** access control 
 We choose to build our model based mainly on ABAC as a standard global AC model that, on the one hand, uses the concept of attributes very advantageous in decentralized IoT environments, and on the other hand includes the benefits of several abstract concepts and other generic AC models such as RBAC.
 
 
-Prérequis 
+Prerequisites 
 -----------
 Install java-JDK :
 
@@ -122,10 +122,10 @@ public void makeAvailibility()
                 }
             }
 
-`192.168.1.161` répresente l'addresse IP du serveur(noeud central ) sur le reseau local.
+`192.168.1.161` IP adress of the server(central node) inside the LAN.
 
 
-**Serveur**
+**Server**
 
 Install a server:
 
