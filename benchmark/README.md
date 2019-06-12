@@ -3,7 +3,7 @@ In this section we find the software implementation of our Smart platform
 Parking.It includes the various files needed for ***login / registration pages
 , homepage and models of different access controls.***
 
-The set of access control templates implemented is in the ***php folder*** that can be found through the following link : [***PHP Folder***](http://www.siteduzero.com) 
+The set of access control templates implemented is in the ***php folder*** that can be found through the following link : [***PHP Folder***](https://github.com/AbdramCoulby/PerBAC/tree/master/benchmark/php) 
 
 Each control has a description page named **_description.php_** that explains the operation of the access control model as well as libraries and
 frameworks used for its implementation found in the file with the **_nameControleaccess.php_**
