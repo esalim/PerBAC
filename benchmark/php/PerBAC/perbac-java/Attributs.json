@@ -1,0 +1,25 @@
+{
+  "organisation": {
+    "name":"MIT",
+    "organizationIdentifer":"50",
+    "description":"Multi Information Technology",
+	"secteur":"Web"
+  },
+
+  "sujet":{
+    "name":"Mamadou",
+    "poste":"developpeur",
+    "userId":"18",
+	"habilitation":"salarie"
+  },
+
+"objet":{
+	"name":"place",
+	"categorie":"donnees"
+	},
+
+"action":{
+	"actiontype":"acceder"
+	}
+
+}
