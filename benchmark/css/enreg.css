@@ -1,0 +1,138 @@
+
+/*  Fichier de mise en forme de la page d'enregistrement (enregistrement.php)  */
+
+body {  /* Corps */
+  background-image: url("../images/log.jpeg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+/*******************************************************************************************/
+/* Class registr du div */
+.registr {
+  width: 450px;
+  height: 480px;
+  background: #dbdbdb;
+  background-attachment: fixed;
+  color: #fff;
+  top: 53%;
+  left: 52%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  box-sizing: border-box;
+  padding: 30px 30px;
+  border-radius: 7%;
+}
+
+.registr p {
+  margin: 5px;
+  padding: 0;
+  font-weight: bold;
+  font-style: italic;
+  color: #e94057;
+}
+
+.registr input {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+
+.registr input[type="button"] {
+  width: 100%;
+  position: center;
+}
+
+.registr input[type="text"],
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid #fff;
+  background: transparent;
+  outline: none;
+  height: 19px;
+  color: rgba(55, 59, 68, 0.96);
+  font-size: 16px;
+}
+
+/*******************************************************************************************/
+
+/* Button S'enregistre */
+.buttn {
+  border: 0;
+  line-height: 2.2;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(164, 220, 114);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+.buttn:hover {
+  background-color: rgb(56, 239, 125);
+}
+
+.buttn:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+
+/*******************************************************************************************/
+.styled { /* Button  Se connecter */
+  border: 0;
+  line-height: 2.2;
+  padding: 0 20px;
+  font-size: 1rem;
+  text-align: center;
+  color: #fff;
+  text-shadow: 1px 1px 1px #000;
+  border-radius: 10px;
+  background-color: rgb(201, 75, 75);
+  background-image: linear-gradient(
+    to top left,
+    rgba(0, 0, 0, 0.2),
+    rgba(0, 0, 0, 0.2) 30%,
+    rgba(0, 0, 0, 0)
+  );
+  box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6),
+    inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+}
+
+.styled:hover {
+  background-color: rgb(255, 58, 65);
+}
+
+.styled:active {
+  box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6),
+    inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
+/*******************************************************************************************/
+.avatar { /* Logo */
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: absolute;
+  left: 43%;
+  top: -7%;
+}
+
+h1 {
+  margin-top: 0;
+  padding: 0 0 0;
+  text-align: center;
+  font-size: 30px;
+  color: #6dd5fa;
+  text-decoration-style: solid;
+  font-weight: bold;
+}
+
+

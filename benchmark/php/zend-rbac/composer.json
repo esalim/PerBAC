@@ -1,0 +1,5 @@
+{
+    "require": {
+        "zendframework/zend-permissions-rbac": "^3.0"
+    }
+}
