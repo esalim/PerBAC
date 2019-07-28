@@ -125,10 +125,10 @@
             <tbody align="center">
             <tr>
                 <td><em><strong>Temps de réponse</strong></em></td>
-                <td> 177 ms</td>
-                <td >200 ms</td>
-                <td>248 ms</td>
-                <td>185 ms</td>
+                <td> 46 ms</td>
+                <td >85 ms</td>
+                <td>65 ms</td>
+                <td>68 ms</td>
             </tr>
             <tr>
                 <td><em><strong>Complexité</strong></em></td>
@@ -244,16 +244,3 @@
 </div>
 </body>
 </html>
-
-
-Bonjour , comme nous avions convenu ci-joint les liens pour l'achat concernant la plateforme Cloud et la Map implementée dans le projet.
-**********************Cloud*************************
-Lien d'inscription : https://accounts.artik.cloud/signup?client_id=d18f11efb5244c8f99f1ac7aa4fb9bbc&response_type=code&redirect_uri=https%3A%2F%2Fmy.artik.cloud%2Fauthorize
-Lien d'achat : https://artik.cloud/pricing/
-
-**********************Gooogle Maps*************************
-Lien : https://cloud.google.com/maps-platform/?apis=maps 
-Choisir l'option Maps et se laisser guider par les instructions.
-Choisir un nom de projet puis integrer l'API Google Maps de Javascript a ajouter sur son compte et terminer par l'ajout d'un compte de facturation.
-
-Lien documentation api : https://developers.google.com/maps/documentation/javascript/get-api-key
