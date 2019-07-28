@@ -1,4 +1,4 @@
-﻿// Premier Capteur
+// Premier Capteur
 #define echoPin1 2       //  Echoc Pin
 #define trigPin1 3      // Trigger Pin 
 #define led1 8         // LED Pin 
@@ -121,14 +121,15 @@ temps1 = pulseIn(echoPin1, HIGH);
  comptePlaces = distance3 + distance1 + distance2 ;  // Addition des valeurs des capteurs pour determiner le nombre de places.
  
 // nombre de places disponibles = nombre total de places  - le nombre total de voitures (les valeurs recues des capteurs).
- placesDispo = 3 - comptePlaces;   
+ placesDispo = 3 - comptePlaces; 
+   
+//Serial.print("MIT Parking -- Places Disponibles : ");
+ //Serial.print("MIT Academy Parking -- Places Disponibles : ");
+ Serial.println(placesDispo);    // Le nombre total de places disponibles est envoyé à la carte Raspberry Pi grace au Serial USB.
 
- Serial.println(placesDispo);    // Le nombre total de places disponibles est envoyé à la carte Raspberry Pi 
-  grace au Serial USB.
-
-Serial.println(distance1);
-Serial.println(distance2);
-Serial.println(distance3);
+//Serial.println(distance1);
+//Serial.println(distance2);
+//Serial.println(distance3);
 
  delay(5000);  // L'etat est mis à jour chaque 30 seconds.
 
@@ -143,7 +144,7 @@ Serial.println(distance3);
     delay(250);
     } while (i<4);   // On envoie une serie d'alarme.
     delay(3000);
-   Serial.println("Il n'y a plus de places disponible pour ce parking");
+   //Serial.println("Il n'y a plus de places disponible pour ce parking");
  }
  
 }
