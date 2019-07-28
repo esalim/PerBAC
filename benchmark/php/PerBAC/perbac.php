@@ -23,8 +23,7 @@
 <nav>
     <div class="topnav">   <!-- affichage de la barre de navigation -->
         <a class="headlogo"> <img height="50" width="50" src="../../images/smart_parking.png" alt="logo"> </a>
-        <a href="../../home/index.html">Home</a>
-        <a href="../websocket.php">Dashboard</a>
+        <a href="../../php/homepage.php">Description</a>
         <a href="../zend-rbac/description.php">RBAC</a>
         <a href="../php-abac/description.php">ABAC</a>
         <a class="active" href="description.php">PerBAC</a>
