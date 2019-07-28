@@ -16,4 +16,4 @@ The source code present in the Raspberry cards allows different Arduino boards a
 to send these different data to the Rapberry cards that will process them and send them via
 from **_SerialPort_** technology and **_Sockets_** to ThingSpeak with the right rules and actions (which we have previously created) to process the corresponding data.
 
-_Link for implmentation :_ [**_Raspberry Pi Card Code_**](https://github.com/AbdramCoulby/PerBAC/tree/master/hardware/raspberry%20pi)
+_Link for implementation :_ [**_Raspberry Pi Card Code_**](https://github.com/AbdramCoulby/PerBAC/tree/master/hardware/raspberry%20pi)
