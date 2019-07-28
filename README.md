@@ -20,7 +20,7 @@ The source codes of the programs are available from the link [**_Benchmark Codes
 
 ### Installation
 
-- After the [**_cabling_**](https://github.com/AbdramCoulby/PerBAC/tree/master/benchmark)  arious components related to Arduino Cards, it is necessary to upload the following [**_arduino code _**](https://github.com/AbdramCoulby/PerBAC/tree/master/hardware/arduino) using the Arduino IDE.
+- After the [**_cabling_**](https://github.com/AbdramCoulby/PerBAC/blob/master/hardware/schema-montage-cap-ultrason_bb.jpg) various components related to Arduino Cards, it is necessary to upload the following [**_arduino code_**](https://github.com/AbdramCoulby/PerBAC/tree/master/hardware/arduino) using the Arduino IDE.
 
 - At the level of the Raspberry Pi cards, it will first be necessary to install several **libraries** and **Python modules** in order to be able to send the data to **_the local server_** and **_ThingSpeak_** visualization platform.
 
