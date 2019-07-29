@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">    <!-- Importation de la library Animate-->
     <div class="logininbox">
         <img src="../images/Login-Icon.png" class="avatar">
-        <h1>Connectez vous ici</h1>
+        <h1>Sign In here</h1>
         <form action="index.php" method="post">
             <!-- Declaration des inputs et buttons de l'interface  -->
             <p>Utilisateur</p>
