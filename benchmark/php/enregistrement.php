@@ -70,7 +70,7 @@
                             $_SESSION['userFonct']=$fnct;
                             echo '<script type="text/javascript"> Swal.fire("Bon Travail...!","Utilisateur enregistré avec succès !", "success");
                       setTimeout(function () {             // Fonction d\'attente 
-                          window.location.href="../home/index.html";     // the redirect goes here
+                          window.location.href="../php/homepage.php";     // the redirect goes here
                           },3000);  </script>';
                         }
                      }
