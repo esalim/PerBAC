@@ -74,7 +74,7 @@
 
             if (isset($_POST['connect_button'])) { // Button cliqué
 
-
+                $start = microtime(true);
                 $e = new Enforcer("mon_model.conf", "ma_regle.csv");  // appel fichier police de decisions (règles)
 
                 $sub = $_POST['badge'];              // Création de l'utilisateur voulant acceder à la ressource
@@ -87,23 +87,25 @@
                         $getEtat = mysqli_fetch_assoc(mysqli_query($conn,"SELECT etat FROM dispo WHERE place = '$obj'"));
                         $Dispo = $getEtat['etat'];   // recuperation etat de la place recherchée dans la Database
                         if ($Dispo===$check){ // place libre
-                            echo '<script type="text/javascript"> 
+                            $end = microtime(true);
+                            $responseTime = 1000*($end - $start);
+                            echo "<script type='text/javascript'> 
                     Swal.fire ({
-                    title:"Notification de disponibilité",
-                    text: "La place recherchée est libre ! ",
-                    imageUrl: " ../../images/pass.jpg",
+                    title: 'Notification de disponibilité',
+                    text: \"La place recherchée est libre et le temps de réponse : $responseTime ms\",
+                    imageUrl: \"../../images/pass.jpg\",
                     imageWidth: 1500,
                     imageHeight: 200,
-                    imageAlt: "Pass image",
-                    buttons: {confirm: "Compris" }
+                    imageAlt: \"Pass image\",
+                    buttons: {confirm: \"Compris\" }
                     }).then(val => {
                     if(val)  {
                     Swal.fire ({
-                    type:"success",
-                    title: "Merci pour votre confiance...!",
-                    text: "Excellente journée",
+                    type:'success',
+                    title: 'Merci pour votre confiance...!',
+                    text: 'Excellente journée',
                     });}});
-                    </script>';
+                    </script>";
                         } else {  // place occupée
                             echo '<script type="text/javascript"> 
                     Swal.fire({
