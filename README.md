@@ -41,7 +41,7 @@ The source codes of the programs are available from the link [**_Benchmark Codes
 
 4. For the implementation of the security and management of existing users the use of a database is essential.To perform this manipulation we have installed [**_XAMPP Server_**](https://www.apachefriends.org/en/index.html) which brings the functionality of **Apache, MySQL, PHPmyadmin** and many others ....
 
-   The database file to import is as follows : [**_smartparking.sql_**](https://www.apachefriends.org/fr/index.html)
+   The database file to import is as follows : [**_smartparking.sql_**](https://github.com/AbdramCoulby/PerBAC/blob/master/benchmark/php/smartparking.sql)
 
 More information on this implementation is used in the section dedicated to [**_Benchmark_**](https://github.com/AbdramCoulby/PerBAC/tree/master/benchmark)
 
