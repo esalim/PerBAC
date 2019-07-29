@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controle d'acces PerBAC</title>
+    <title>PerBAC Access Control</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -28,7 +28,7 @@
         <a href="../php-abac/description.php">ABAC</a>
         <a class="active" href="description.php">PerBAC</a>
         <a href="../xacml-php/description.php">XACML</a>
-        <a href="../resultats.php">Comparatifs & Resultats</a>
+        <a href="../resultats.php">Comparative & Results</a>
 
 
         <div class="dropdown">
@@ -40,7 +40,7 @@
                 <a href="../../php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Sortir</a>
+        <a href="../../php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 <!-- The sidebar -->
@@ -56,37 +56,36 @@
             <h2 class="text-center">Autorisation Membre</h2>
             <!-- Declaration des inputs et buttons de l'interface  -->
             <div class="form-group">
-                <input type="text" name="organisation" class="form-control" placeholder="Nom de l'Organisation"
+                <input type="text" name="organisation" class="form-control" placeholder="Organisation Name"
                        required="required">
             </div>
             <div class="form-group">
-                <input type="text" name="nom" class="form-control" placeholder="Nom de l'utilisateur"
+                <input type="text" name="nom" class="form-control" placeholder="Username"
                        required="required">
             </div>
             <div class="form-group">
-                <input type="text" name="poste" class="form-control" placeholder="Poste" required="required">
+                <input type="text" name="poste" class="form-control" placeholder="Fonction" required="required">
             </div>
             <div class="form-group">
-                <input type="text" name="badge" class="form-control" placeholder="Couleur de votre badge"
+                <input type="text" name="badge" class="form-control" placeholder="Badge Color"
                        required="required">
             </div>
             <div class="form-group">
-                <input type="text" name="place" class="form-control" placeholder="Place Recherchée" required="required">
+                <input type="text" name="place" class="form-control" placeholder="Place" required="required">
             </div>
             <div class="form-group">
-                <input type="text" name="auto" class="form-control" placeholder="Avez vous les droits requis"
+                <input type="text" name="auto" class="form-control" placeholder="Do you have the required rights"
                        required="required">
             </div>
             <div class="form-group">
-                <button id="buttonV" name="connect_button" type="submit" class="btn btn-primary btn-block">Verifier
-                    disponibilité
+                <button id="buttonV" name="connect_button" type="submit" class="btn btn-primary btn-block">Check avaibility
                 </button>
             </div>
             <br>
             <br>
 
 
-            <h3 align="center"><strong><em>Video Test à l'aide du Langage JAVA et des fichiers JSONs </em></strong></h3>
+            <h3 align="center"><strong><em>Video Test Using JAVA Language and JSON Files </em></strong></h3>
             <div class="form-group" align="center">
                 <video width="800" height="450" controls >
                     <source  src="perbac-java/perbac.mp4" type="video/mp4" >
@@ -101,7 +100,7 @@
 
             if (isset($_POST['connect_button'])) {   // Button cliqué
 
-
+               $start = microtime(true);
                 // Envoi des données par la methode POST.On utilisera le type de variable global
                 // par la suite afin de recuperer ces valeurs pour l'utilisation de nos fonctions.
                 //Elle remplace l'entite POlicy Information Point qui etait déstinée
@@ -228,7 +227,7 @@
                     $conn = mysqli_connect($servername, $DBusername, $DBpassword, $DBname);
 
                     if (!$conn) {  // message d'echec
-                        die("Connexion echouée" . mysqli_connect_error());
+                        die("Connection failed" . mysqli_connect_error());
                     }
 
                     global $Badge, $PlaceRech;
@@ -241,28 +240,30 @@
                                 $getEtat = mysqli_fetch_assoc(mysqli_query($conn, "SELECT etat FROM dispo WHERE place = '$PlaceRech'"));
                                 $Dispo = $getEtat['etat'];
                                 if ($Dispo === $check) { // place libre
-                                    echo '<script type="text/javascript">
+                                    $end = microtime(true);
+                                    $responseTime = 1000*($end - $start);
+                                    echo "<script type='text/javascript'> 
                     Swal.fire ({
-                    title:"Notification de disponibilité",
-                    text: "La place recherchée est libre ! ",
-                    imageUrl: " ../../images/pass.jpg",
+                    title: 'Availability Notification',
+                    text: \"The place sought is free and the response time : $responseTime ms\",
+                    imageUrl: \"../../images/pass.jpg\",
                     imageWidth: 1500,
                     imageHeight: 200,
-                    imageAlt: "Pass image",
-                    buttons: {confirm: "Compris" }
+                    imageAlt: \"Pass image\",
+                    buttons: {confirm: \"Compris\" }
                     }).then(val => {
                     if(val)  {
                     Swal.fire ({
-                    type:"success",
-                    title: "Merci pour votre confiance...!",
-                    text: "Excellente journée",
+                    type:'success',
+                    title: 'Thank you for your trust...!',
+                    text: 'Have a nice day',
                     });}});
-                    </script>';
+                    </script>";
                                 } else {  // place occupée
                                     echo '<script type="text/javascript">
                     Swal.fire({
-                    title: \'Notification de disponibilité\',
-                    text:"La place recherchée est déjà occupée",
+                    title: \'Availability Notification\',
+                    text:"The place sought is already occupied",
                     imageUrl: " ../../images/verif.jpg",
                     imageWidth: 1500,
                     imageHeight: 200,
@@ -275,7 +276,7 @@
                                 echo '<script type="text/javascript">
                     Swal.fire({
                     title: \'Oops\',
-                    text:"Vous ne disposez pas des droits d\'accès à cette place",
+                    text:"You do not have access rights to this place",
                     type:"info"
                     })</script>';
                             }
@@ -283,7 +284,7 @@
                             echo '<script type="text/javascript">
                     Swal.fire({
                     title: \'Oops\',
-                    text:"Vous ne disposez pas des droits requis pour effectuer cette opération",
+                    text:"You do not have the required rights to perform this operation",
                     type:"error"
                     })</script>';
                         }
@@ -295,28 +296,30 @@
                                 $getEtat = mysqli_fetch_assoc(mysqli_query($conn, "SELECT etat FROM dispo WHERE place = '$PlaceRech'"));
                                 $Dispo = $getEtat['etat'];
                                 if ($Dispo === $check) { // place libre
-                                    echo '<script type="text/javascript">
+                                    $end = microtime(true);
+                                    $responseTime = 1000*($end - $start);
+                                    echo "<script type='text/javascript'> 
                     Swal.fire ({
-                    title:"Notification de disponibilité",
-                    text: "La place recherchée est libre ! ",
-                    imageUrl: " ../../images/pass.jpg",
+                    title: 'Availability Notification',
+                    text: \"The place sought is free and the response time : $responseTime ms\",
+                    imageUrl: \"../../images/pass.jpg\",
                     imageWidth: 1500,
                     imageHeight: 200,
-                    imageAlt: "Pass image",
-                    buttons: {confirm: "Compris" }
+                    imageAlt: \"Pass image\",
+                    buttons: {confirm: \"Compris\" }
                     }).then(val => {
                     if(val)  {
                     Swal.fire ({
-                    type:"success",
-                    title: "Merci pour votre confiance...!",
-                    text: "Excellente journée",
+                    type:'success',
+                    title: 'Thank you for your trust...!',
+                    text: 'Have a nice day',
                     });}});
-                    </script>';
+                    </script>";
                                 } else {  // place occupée
                                     echo '<script type="text/javascript">
                     Swal.fire({
-                    title: \'Notification de disponibilité\',
-                    text:"La place recherchée est déjà occupée",
+                    title: \'Availability Notification\',
+                    text:"The place sought is already occupied",
                     imageUrl: " ../../images/verif.jpg",
                     imageWidth: 1500,
                     imageHeight: 200,
@@ -329,7 +332,7 @@
                                 echo '<script type="text/javascript">
                     Swal.fire({
                     title: \'Oops\',
-                    text:"Vous ne disposez pas des droits d\'accès à cette place",
+                    text:"You do not have access rights to this place",
                     type:"info"
                     })</script>';
                             }
@@ -337,7 +340,7 @@
                             echo '<script type="text/javascript">
                     Swal.fire({
                     title: \'Oops\',
-                    text:"Vous ne disposez pas des droits requis pour effectuer cette opération",
+                    text:"You do not have the required rights to perform this operation",
                     type:"error"
                     })</script>';
                         }
@@ -345,7 +348,7 @@
                         echo '<script type="text/javascript">
                     Swal.fire({
                     title: \'Oops\',
-                    text:"Vous ne disposez pas des droits requis pour effectuer cette opération",
+                    text:"You do not have the required rights to perform this operation",
                     type:"error"
                     })</script>';
                     }
