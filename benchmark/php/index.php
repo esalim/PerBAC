@@ -63,7 +63,7 @@
                   $_SESSION['userFonct']=$row['fonction'];
                   echo '<script type="text/javascript"> Swal.fire("Bon Travail...!", "Connection reussie!", "success"); 
                      setTimeout(function () {
-                          window.location.href="../home/index.html";  // the redirect goes here
+                          window.location.href="../php/homepage.php";  // the redirect goes here
                       },2500);
                    </script>';
 
