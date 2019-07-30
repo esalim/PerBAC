@@ -50,7 +50,7 @@
 <!-- Page content -->
 <div class="content">
     <form action="rbac.php" method="post">
-        <h2 class="text-center">Autorisation Membre</h2>
+        <h2 class="text-center">Autorisation Member</h2>
         <!-- Declaration des inputs et buttons de l'interface  -->
         <div class="form-group">
             <input type="text" name="urole" class="form-control" placeholder="Role" required="required">
