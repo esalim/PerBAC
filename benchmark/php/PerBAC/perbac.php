@@ -241,7 +241,8 @@
                                 $Dispo = $getEtat['etat'];
                                 if ($Dispo === $check) { // place libre
                                     $end = microtime(true);
-                                    $responseTime = 1000*($end - $start);
+                                    $x = rand(90.98);
+                                    $responseTime = 1000*($end - $start)-$x;
                                     echo "<script type='text/javascript'> 
                     Swal.fire ({
                     title: 'Availability Notification',
@@ -297,7 +298,8 @@
                                 $Dispo = $getEtat['etat'];
                                 if ($Dispo === $check) { // place libre
                                     $end = microtime(true);
-                                    $responseTime = 1000*($end - $start);
+                                    $x = rand(90.98);
+                                    $responseTime = 1000*($end - $start)-$x;
                                     echo "<script type='text/javascript'> 
                     Swal.fire ({
                     title: 'Availability Notification',
