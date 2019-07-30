@@ -51,7 +51,7 @@
 <div class="content">
     <div class="login-form">
         <form action="xacml.php" method="post">
-            <h2 class="text-center">Autorisation Membre</h2>
+            <h2 class="text-center">Autorisation Member</h2>
             <!-- Declaration des inputs et buttons de l'interface  -->
             <div class="form-group">
                 <input type="text" name="role" class="form-control" placeholder="Role" required="required">
