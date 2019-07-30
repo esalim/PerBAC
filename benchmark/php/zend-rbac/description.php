@@ -38,7 +38,7 @@
                 <a href="../../php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Sortir</a>
+        <a href="../../php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 <!-- The sidebar -->
