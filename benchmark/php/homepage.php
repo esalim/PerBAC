@@ -35,11 +35,11 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="../../php/index.php">Sign In</a>
-                <a href="../../php/enregistrement.php">Sign Up</a>
+                <a href="../../benchmark/php/index.php">Sign In</a>
+                <a href="../../benchmark/php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Logout</a>
+        <a href="../../benchmark/php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 
