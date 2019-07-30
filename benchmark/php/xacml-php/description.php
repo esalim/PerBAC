@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controle d'acces XACML</title>
+    <title>XACML Control Access</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,13 +22,12 @@
 
     <div class="topnav">   <!-- affichage de la barre de navigation -->
         <a class="headlogo"> <img height="50"  width="50" src="../../images/smart_parking.png" alt="logo"> </a>
-        <a href="../../home/index.html">Home</a>
-        <a  href="../websocket.php">Dashboard</a>
+        <a href="../../php/homepage.php">Description</a>
         <a  href="../zend-rbac/description.php">RBAC</a>
         <a href="../php-abac/description.php">ABAC</a>
         <a href="../PerBAC/description.php">PerBAC</a>
         <a class="active" href="description.php">XACML</a>
-        <a href="../resultats.php">Comparatifs & Resultats</a>
+        <a href="../resultats.php">Comparatives & Results</a>
 
 
         <div class="dropdown">
@@ -40,7 +39,7 @@
                 <a href="../../php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Sortir</a>
+        <a href="../../php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 <!-- The sidebar -->
@@ -52,47 +51,47 @@
 <div class="content">
     <div class="login-form">
         <br>
-        <h2 align="center"><a href="#standard-xacml-appliqué-au-modèle-de-controle-daccès" id="standard-xacml-appliqué-au-modèle-de-controle-daccès">Standard XACML appliqué au modèle de controle d'accès</a></h2>
-        <p><em><strong>XACML  (eXtensible Access Control Markup Language)</strong></em> est un langage de contrôle d’accès basé sur XML normalisé par <strong>OASIS (Organisation pour l’avancement des normes d’information structurée)</strong>
-            qui décrit à la fois un <em>langage de stratégie de contrôle d'accès qui est ABAC et un langage de décision de contrôle d'accès (demande / réponse).</em></p>
-        <p>Il s'agit là d'une spécification qui définit la circulation des règles , l'administration de la politique de sécurité des systèmes d'information et
-            qui assure la fonction d'autorisation dans les architectures <strong>SOA (Service Oriented Architecture)</strong></p>
-        <p>XACML est principalement un contrôle d'accès basé sur les attributs système <strong>(ABAC)</strong>,
-            où les attributs (bits de données) associées à un utilisateur ou d'une action ou
-            d'une ressource sont entrées dans la décision de savoir si
-            un utilisateur donné peut accéder à une ressource donnée d'une manière particulière.</p>
-        <p>Le Contrôle d'accès basé sur les rôles <strong>(RBAC)</strong> peut également être mis en œuvre dans XACML comme une spécialisation de ABAC.</p>
-        <p>XACML définit les composants suivants:</p>
+        <h2 align="center"><a href="#standard-xacml-applied-to-the-access control model" id="standard-xacml-applied-to-the-access control model">XACML standard applied to the access control model</a></h2>
+        <p><em><strong>XACML (eXtensible Access Control Markup Language)</strong></em> is an access control language based on XML standardized by <strong>OASIS (Organization for the Advancement of Structured Information Standards)</strong>
+            which describes both an access control strategy language that is ABAC and an access control decision language (request / answer). </em></p>
+        <p>This is a specification that defines the circulation of rules, the administration of the information systems security policy and
+            which provides the authorization function in architectures <strong>SOA (Service Oriented Architecture)</strong></p>
+        <p>XACML is mainly an access control based on system attributes <strong>(ABAC)</strong>,
+            where the attributes (data bits) associated with a user or action or
+            of a resource are involved in the decision to know if
+            a given user can access a given resource in a particular way. </p>
+        <p>Role-based access control <strong>(RBAC)</strong> can also be implemented in XACML as an ABAC specialization.</p>
+        <p>XACML defines the following components:</p>
         <ul class="test">
-            <li><em><strong>Policy Enforcement Point (PEP) :</strong></em>  Il s'agit du point d'application de la décision. Il intercepte la demande d'accès de l' utilisateur à une ressource, fait une demande de décision au PDP pour obtenir la décision d'accès (accès à la ressource est approuvée ou rejetée)  et agit sur la décision reçue.Le PEP protège l'application ciblée.</li>
-            <li><em><strong>Policy Decision Point (PDP) :</strong></em> C'est le point de décision de la politique. Le PDP est le moteur de l'architecture. C'est l'endroit où les politiques sont évaluées et comparées contre les requêtes d'autorisation.</li>
-            <li><em><strong>Policy Information Point (PIP) :</strong></em> Le point d'information est le point où le PDP peut se connecter à des sources externes d'attributs comme LDAP ou une base de données. L'idée est que lors de l'évaluation d'une requête contre une politique, le PDP a besoin d'informations (attributs) supplémentaires pour obtenir une décision.</li>
-            <li><em><strong>Policy Retrieval Point (PRP) :</strong></em> Il s'agit du point de stockage des politiques. En somme, le PRP n'est qu'une base de données ou un endroit dans un dossier où sont stockées les politiques.</li>
-            <li><em><strong>Policy Administration Point (PAP) :</strong></em> Le point d'administration des politiques est l'endroit où les politiques de contrôle d'accès sont éditées.</li>
+            <li><em><strong>Policy Enforcement Point (PEP) : </strong></em> This is the point of application of the decision. It intercepts the user's request for access to a resource, makes a decision request to the PDP to obtain the access decision (access to the resource is approved or rejected) and acts on the decision received. the PEP protects the targeted application. </li>
+            <li><em><strong>Policy Decision Point (PDP) : </strong></em> This is the policy decision point. The PDP is the driving force behind the architecture. This is where policies are evaluated and compared against authorization requests. </li>
+            <li><em><strong>Policy Information Point (PIP) : </strong></em> The information point is the point where the PDP can connect to external sources of attributes such as LDAP or a database. The idea is that when evaluating a request against a policy, the PDP needs additional information (attributes) to obtain a decision. </li>
+            <li><em><strong>Policy Retrieval Point (PRP) : </strong></em> This is the policy storage point. In short, the PRP is only a database or a place in a folder where policies are stored. </li>
+            <li><em><strong>Policy Administration Point (PAP) : </strong></em> The policy administration point is where access control policies are published. </li>
         </ul>
-        <p>L'image ci dessous montre l'architecture XACML et un flux d'autorisation de l'échantillon.</p>
+        <p>The image below shows the XACML architecture and a sample authorization flow. </p>
         <p><img src="../../images/XACML.png" style="width : 600px ; height: 400px ; float: left ; margin-bottom: 10px ; margin-right: 65px"  alt="Standard XACML" title="XACML Flux d'autorisation" styl/></p>
         <ol style="line-height: 45px">
-                <li>Un utilisateur envoie une requête qui est interceptée par la politique Enforcement Point (PEP)</li>
-                <li>Le PEP convertit la demande en une demande d'autorisation XACML</li>
-                <li>Le PEP transmet la demande d'autorisation à la point de décision politique (PDP)</li>
-                <li>Le PDP évalue la demande d'autorisation contre les politiques qu'il est configuré avec. Les politiques sont acquises par la politique point de récupération (PRP) et gérés par la politique Point d'administration (PAP). Si nécessaire, il récupère également les valeurs d'attribut de points d'information sur les politiques sous-jacentes (PIP).</li>
-                <li>Le PDP prend une décision (permis / Refuser / Nonapplicable / indéterminés) et le renvoie à la PEP</li>
+                <li>A user sends a request that is intercepted by the Enforcement Point (PEP) policy </li>
+                <li>The PEP converts the request into an XACML</li> request for authorization
+                <li>The PEP forwards the request for authorisation to the political decision point (PDP)</li>
+                <li>The PDP evaluates the authorization request against the policies it is configured with. Policies are acquired by the recovery point policy (PRP) and managed by the administration point policy (PAP). If necessary, it also retrieves underlying policy information point (PIP) attribute values. </li>
+                <li>The PDP makes a decision (permit / Refuse / Non-applicable / Indeterminate) and refers it to the PEP</li>
         </ol>
         <br>
-        <p>Pour l'implementation du modèle au sein de notre plateforme <em><strong>IoT Smart Parking</strong></em> nous avons fait appel à une base de données en ligne (stockage des places disponibles) ainsi qu'à <a href="https://github.com/enygma/xacmlphp"><em><code>OASIS/XACML Library</code></em></a> ,
-            une bibliothèque implémentant la norme OASIS / XACML pour l'autorisation basée sur des règles.</p>
-        <p>Il s'agit là d'une structure XML bien définie permettant d’évaluer les attributs de stratégies en fonction d’attributs de sujets afin de déterminer s’il existe une correspondance (en fonction de règles d’opération et de combinaison d’algorithmes).</p>
-        <p>Plus d'informations à partir du diagramme de notre modèle :</p>
-        <p><img src="../../images/xacmldec.png" alt="XACML" title="XACML Proceduire " style="float: left;width: 700px;height: 600px ; margin-right: 40px"/>
-            <img src="../../images/xacml2.png" alt="XACML Diagramme" title="XACML Diagramme " style="float: right ; width: 630px;height: 600px;margin-left: 15px"/></p>
+        <p>For the implementation of the model within our platform <em><strong>IoT Smart Parking</strong></em> we used an online database (storage of available spaces) as well as <a href="https://github.com/enygma/xacmlphp"><em><code>OASIS/XACML Library</code></em></a>,
+            a library implementing the OASIS / XACML standard for rule-based authorization.</p>
+        <p>This is a well-defined XML structure for evaluating policy attributes based on subject attributes to determine if there is a match (based on operating rules and algorithm combinations). </p>
+        More information from our model diagram : <p>
+        <p><img src="../../images/xacmldec.png" alt="XACML" title="XACML Proceduire " style="float: left;width: 580px;height: 550px ; margin-bottom: 20px ; margin-right: 10px"/>
+            <img src="../../images/xacml2.png" alt="XACML Diagramme" title="XACML Diagramme " style="float: right ; width: 480px;height: 550px;margin-bottom: 20px;margin-left: 10px"/></p>
         <br>
-        <p>XACML conjointe à ABAC est très <em><strong>flexible et offre énormément de possibilités</strong></em>
-            puisque que l'on peut améliorer grandement <em>la performance d'autres models (RBAC , MAC...).</em>
-            C'est un <em><strong>modèle architectural clair et utile</strong></em> bien au delà d'ABAC de par la syntaxe de ce langage et des outils réliés
-            meme si ce langage n'est pas <em>très conviviale et sa puissance peut etre difficile à maîtriser</em>.</p>
+        <p>XACML in conjunction with ABAC is very <em><strong>flexible and offers a lot of possibilities</strong></em>
+            since the performance of other models (RBAC, MAC...) can be greatly improved <em>. </em>
+            It is a clear and useful architectural model <em><strong>model</strong></em> well beyond ABAC due to the syntax of this language and the related tools
+            even if this language is not <em>very user-friendly and its power can be difficult to master</em>.</p>
 
-        <p><em>Nous retrouverez  l'implementation sur notre plateforme IoT Smart Parking grace à la section <em><strong><a href="xacml.php">Test</a> </strong></em></em></p>
+        <p><em>We will find the implementation on our IoT Smart Parking platform thanks to the section <em><strong><a href="xacml.php">Test</a> </strong></em></em></p>
         <br>
     </div>
 </div>
