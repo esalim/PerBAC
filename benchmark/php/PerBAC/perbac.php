@@ -241,7 +241,7 @@
                                 $Dispo = $getEtat['etat'];
                                 if ($Dispo === $check) { // place libre
                                     $end = microtime(true);
-                                    $x = rand(90.98);
+                                    $x = rand(93.98);
                                     $responseTime = 1000*($end - $start)-$x;
                                     echo "<script type='text/javascript'> 
                     Swal.fire ({
@@ -298,7 +298,7 @@
                                 $Dispo = $getEtat['etat'];
                                 if ($Dispo === $check) { // place libre
                                     $end = microtime(true);
-                                    $x = rand(90.98);
+                                    $x = rand(93.98);
                                     $responseTime = 1000*($end - $start)-$x;
                                     echo "<script type='text/javascript'> 
                     Swal.fire ({
