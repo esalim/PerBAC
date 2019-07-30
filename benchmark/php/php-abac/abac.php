@@ -50,7 +50,7 @@
 <div class="content">
     <div class="login-form">
         <form action="abac.php" method="post">
-            <h2 class="text-center">Autorisation Membre</h2>
+            <h2 class="text-center">Autorisation Member</h2>
             <!-- Declaration des inputs et buttons de l'interface  -->
             <div class="form-group">
                 <input type="text" name="badge" class="form-control" placeholder="Badge Color" required="required">
