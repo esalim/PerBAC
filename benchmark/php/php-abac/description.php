@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controle d'acces ABAC</title>
+    <title>ABAC Access Control</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -25,7 +25,7 @@
         <a class="active" href="description.php">ABAC</a>
         <a href="../PerBAC/description.php">PerBAC</a>
         <a href="../xacml-php/description.php">XACML</a>
-        <a href="../resultats.php">Comparatifs & Resultats</a>
+        <a href="../resultats.php">Comparatives & Results</a>
 
 
         <div class="dropdown">
@@ -37,7 +37,7 @@
                 <a href="../../php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Sortir</a>
+        <a href="../../php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 <!-- The sidebar -->
@@ -50,35 +50,61 @@
 <div class="content">
     <div class="login-form">
        <br>
-        <h2 align ="center"><a  href="#modèle-role-based-access-control-rbac" id="modèle-role-based-access-control-rbac"> &nbsp; Role Based Access Control (RBAC) Model </a></h2>
-                <p>
-                 
-                Role Based Access Control (RBAC) is a model and access control structure that <em><strong>controls 
-                user access to resources based on their roles</strong></em>.</p>
-                <p> A role usually stems from the structure of a company. Users with similar functions can be grouped under the same role (<em>Ex</em> : accountant , commercial...)</p>
-                <p> This is a link between users and resources.</p>
-                <p> A role, determined by a central authority, associates a subject with access permissions on a set of objects.</p>
-                <p>We find below an illustrative figure of the model : </p>
-                <br>
-                <p align="center"><img src="../../images/rbac_overview.png" alt="RBAC Modèle"  height="380"  width="1000" title="Role Based Access Control Model " /></p>
-                <br>
-                <p>For the implementation of the model within our platform <em><strong>IoT Smart Parking</strong></em> we used an online database (storage of available places) and <a href="https://docs.zendframework.com/zend-permissions-rbac/intro/"><em><code>zend-framework</code></em></a> , a framework that contains the descriptive classes and presents the model RBAC as follows : </p>
-                <ul>
-                    <li><em>An identity has one or more roles.</em></li>
-                    <li><em>a role requests access for authorization to a resource</em></li>
-                    <li><em>an authorization is given to a role.</em></li>
-                </ul>
-                <p>This obviously according to the access policy (security rules) present on the platform.</p>
-                <p>Below is an explanatory diagram of the access procedure : </p>
-                <br>
-                <p align="center">
-                    <img  src="../../images/rbacdec.PNG" align="center" height="620"  width="1000" alt="RBAC Diagramme" title="RBAC Politique d'acces " /></p>
-                <br>
-                <p>The RBAC model, in its simplest or most complex form, allows, when it is understood and controlled,
-                    <em><strong>to increase the operational performance of assigning rights</strong></em>
-                    to users and thus brings <em><strong>a consequent reduction in the cost of identity management </strong></em> of the company.</p>
-        <p><em>We will find the implementation on our platform IoT Smart Parking thanks to the section <em><strong><a href="rbac.php">Test</a> </strong></em></em></p>
-                <br>
+        <h2 align="center"><a href="#modèle-attribute-based-access-control-abac" id="modèle-attribute-based-access-control-abac">Attribute Based Access Control (ABAC) Model</a></h2>
+        <p>Attribute-Based Access Control (ABAC), also known as policy-based access control, 
+        defines access control in which access rights are granted to users through 
+        the use of policies that combine the attributes together.</p>
+        <p>This is where you can <em><strong>dynamically evaluate</strong></em> digital security policies against <em><strong>relevant attribute values</strong></em> and determine whether a user's request will <em><strong>be allowed or not</strong></em>.</p>
+        <p>Unlike role-based access control (RBAC), the main difference with ABAC is the concept of policies that express <em><strong>a complex set of Boolean rules</strong></em>
+        that evaluate many different attributes.</p>
+        <p> ABAC operates according to the following architecture:</p>
+        <ol>
+            <li>
+                <p><em><strong> PEP or Politique Enforcement Point :</strong></em> It is responsible for protecting the data and applications on which ABAC is to be applied. The PEP inspects the request and then generates an authorization 
+                request that will be sent to the PDP. The PDP decision or 
+                point policy is the brain of architecture. This is the part that evaluates 
+                incoming requests against the policies that it has been configured with. The PDP returns a Permit / Deny decision.</p>
+            </li>
+            <li>
+                <p><em><strong>Attributes :</strong></em> can be of any type and belong to everyone. There are generally four (4) main types :</p>
+            </li>
+        </ol>
+        <ul>
+            <br>
+            <li><strong>Subject attributes</strong> that describe the user trying to age eg access, authorization, role ...</li>
+            <br>
+            <li><strong>Action attributes</strong> that describe the attempted action of reading for example, delete, view, approve ...</li>
+            <br>
+            <li><strong> Objets attributes</strong> that describe the object (or resource) being accessible for example the type of object (medical file, account banking ...), department, classification or sensitivity, location ...</li>
+            <br>
+            <li><strong> Contextual (environmental) attributes</strong> that deal with the time, place, or dynamic aspects of the access control scenario.</li>
+        <br>
+        </ul>
+        <ol start="3">
+            <li><em><strong>Policies :</strong></em> are statements that bring the attributes together to express what can happen and is not allowed.</li>
+        </ol>
+        <p>  We find below an illustrative figure of the model :</p>
+        <br>
+        <p align="center"><img src="../../images/authorizationdiagram.png" height="420"  width="820" alt="ABAC Modèle" title="ABAC Modèle d'acces " /></p>
+        <br>
+        <p>As shown in the figure above, requests for access to a resource a resource 
+        are intercepted by the policy's point of application (PEP) and redirected 
+        to a policy / political decision-making point service (PDP / PDS). The requests will
+         be evaluated in real time, following a policy of rules that support the Boolean logic, 
+         in which the rules contain "SI, then" loops about the (user) who makes the request, the resource, and the action.</p>
+        <p>For the implementation of the model in our <em><strong>IoT Smart Parking</strong></em> we used an online database (storage of available seats) and <a href="https://docs.zendframework.com/zend-permissions-rbac/intro/"><em><code>Casbin(PHP)</code></em></a> ,
+        a powerful and efficient open source access control library running following a <em><strong>.conf</strong></em> file containing all of our rules and a <em><strong>.csv</strong></em> file (attributes database) that will do will be compared to data from the database in lineages.</p>
+        <p> More information from diagram of our model :</p>
+        <br>
+        <p align="center"><img src="../../images/abacdec.PNG" height="620"  width="920" alt="ABAC Diagramme" title="ABAC Politique d'acces " /></p>
+        <br>
+        <p>ABAC is considered a "next generation" because it offers
+            <em><strong>a dynamic, contextual and risk-based approach.</strong></em>It is a intelligent access control 
+            to resources to define access control policies that include attributes 
+            specific to many different information systems<em><strong>to resolve and ensure effective regulatory compliance</strong></em>,
+            as well as enable businesses to to be flexible in their implementation based on their existing infrastructure.</p>
+            <p><em>We will find the implementation on our IoT Smart Parking platform thanks to the section <em><strong><a href="abac.php">Test</a> </strong></em></em></em></p>
+<br>
     </div>
 </div>
 
