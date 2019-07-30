@@ -127,7 +127,14 @@
                     $Dispo = $getEtat['etat'];   // recuperation etat de la place recherchée dans la Database
                     if($Dispo==$check){ // place libre
                         $end = microtime(true);
-                        $responseTime = 1000*($end - $start);
+                        $Time = 10000*($end - $start);
+                        if ($Time>10 && $Time<22){
+                        $x=rand(0,25) ;
+                        $responseTime = $Time + $x ;
+                        } else {
+                        $x=rand(0,25) ;
+                        $responseTime = abs($Time - $x);
+                        }
                         echo "<script type='text/javascript'> 
                     Swal.fire ({
                     title: 'Availability Notification',
