@@ -26,7 +26,7 @@
         <a href="php-abac/description.php">ABAC</a>
         <a href="PerBAC/description.php">PerBAC</a>
         <a href="xacml-php/description.php">XACML</a>
-        <a href="../resultats.php">Comparative & Results</a>
+        <a href="resultats.php">Comparative & Results</a>
         
 
 
