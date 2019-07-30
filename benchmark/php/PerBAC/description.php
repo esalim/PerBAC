@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Controle d'acces PerBAC</title>
+    <title> PerBAC Access Control </title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -22,13 +22,12 @@
 
     <div class="topnav">   <!-- affichage de la barre de navigation -->
         <a class="headlogo"> <img height="50"  width="50" src="../../images/smart_parking.png" alt="logo"> </a>
-        <a href="../../home/index.html">Home</a>
-        <a  href="../websocket.php">Dashboard</a>
+        <a href="../../php/homepage.php">Description</a>
         <a  href="../zend-rbac/description.php">RBAC</a>
         <a href="../php-abac/description.php">ABAC</a>
         <a class="active" href="description.php">PerBAC</a>
         <a  href="../xacml-php/description.php">XACML</a>
-        <a href="../resultats.php">Comparatifs & Resultats</a>
+        <a href="../resultats.php">Comparatives & Results</a>
 
 
         <div class="dropdown">
@@ -40,7 +39,7 @@
                 <a href="../../php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Sortir</a>
+        <a href="../../php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 <!-- The sidebar -->
@@ -51,66 +50,65 @@
 
 <div class="content">
     <div class="login-form">
-        <br>
-        <h2 align="center"><a href="#modèle-pervasive-base-access-control-perbac" id="modèle-pervasive-base-access-control-perbac">Modèle Pervasive Base Access Control (PerBAC)</a></h2>
-        <p>Compte tenu des limites rencontrées des modèles de contrôles d'accès populaires et largement adoptés dans des environnements IdO,
-            et surtout de l'importance des contrôles d'accès dans de tels environnements, un sérieux besoin d'une solution adaptée à l' IdO s'impose.</p>
-        <p>C'est ainsi que le modèle de control d'accès <em><strong>PerBAC (Pervasive Base Access Control)</strong></em> essentiellement basée sur <strong>ABAC</strong> a vu le jour.</p>
-        <p>Ce modèle utilise <em>le concept d'attributs</em>, ce qui est très avantageux dans les environnements décentralisés IdO, et comprend également plusieurs <em>concepts abstraits</em> et d'autres modèles AC génériques tels que <strong>RBAC</strong>.</p>
-        <p>Nous enrichissons ABAC non seulement avec des <em>fonctionnalités supplémentaires de OrBAC et ses extensions</em>, mais aussi avec <em>une approche de sécurité originale</em> qui répond aux exigences de base IdO.</p>
-        <p>Il s'agit là d'une approche proactive, qui permet l'utilisation intelligente des attributs et des entités abstraites bien connues.</p>
+               <br>
+        <h2 align="center"><a href="#modèle-pervasive-base-access-control-perbac" id="modèle-pervasive-base-access-control-perbac">Pervasive Base Access Control (PerBAC) Model</a></h2>
+        <p>Given the limitations of popular access control models that have been widely adopted in IoT environments,
+            and especially the importance of access controls in such environments, there is a serious need for a solution adapted to IoT. </p>
+        <p>This is how the access control model <em><strong>PerBAC (Pervasive Base Access Control)</strong></em> essentially based on <strong>ABAC</strong> was created. </p>
+        <p>This model uses the concept of attributes</em>, which is very advantageous in decentralized IdO environments, and also includes several <em>abstract concepts</em> and other generic CA models such as <strong>RBAC</strong>.</p>
+        <p>We enrich ABAC not only with additional <em>features of OrBAC and its extensions</em>, but also with <em>an original security approach</em> that meets the basic requirements of IdO.</p>
+        <p>This is a proactive approach, allowing the intelligent use of well-known attributes and abstract entities.
         <p><img src="../../images/per1.png" alt="Entités PerBAC" title="Les Entités du modèle PerBAC " style="float: right;"/></p>
-        <p style="float: left">Le modèle PerBAC, puisque possédant des fonctionnalités de OrBAC caractérise toutes ses entités par des attributs
-            qui sont des caractéristiques du sujet, objet, ou dans des conditions d'environnement.</p>
-        <p>On retrouve également la notion d'attributs abstraits (tels que le rôle, l'activité, la vue et le contexte).</p>
-        <p>PerBAc est un modèle multi-couche possédant le concept d'attributs comme un élément essentiel
-            ce qui le rend <em><strong>plus dynamique, pro-actif et très apte</strong></em> à répondre aux besoins du contexte IdO.</p>
-        <p>Les attributs de la couche abstraite sont considérées comme logiques / attributs abstraits avec de nombreuses conditions,
-            alors que les attributs de la couche physique sont des attributs physiques.</p>
-        <p>Le concept de mise en correspondance dans PerBAC
-            est relativement simple : si les attributs d'une entité concrète (sujet, objet ou action) caractérisent l'entité abstraite correspondante (rôle, vue ou d'une activité, respectivement),
-            alors le premier est automatiquement adaptée à celle-ci.</p>
-        <p>Les attributs d'une organisation seront en même temps concret et abstrait.</p>
-        <p>La prise de décision d'autorisation ou refus de l'accès à un sujet pour une ressource demandée (objet) se passe selon la figure illustrative ci contre</p>
+        <p style="float: left">The PerBAC model, since it has OrBAC functionalities, characterizes all its entities by attributes
+            which are characteristics of the subject, object, or under environmental conditions. </p>
+        <p>We also find the notion of abstract attributes (such as role, activity, view and context).</p>
+        <p>PerBAc is a multi-layer model with the concept of attributes as an essential element
+            which makes it <em><strong> more dynamic, proactive and highly capable</em></strong> of meeting the needs of the IdO context. </p>
+        <p>The attributes of the abstract layer are considered logical / abstract attributes with many conditions,
+            while the attributes of the physical layer are physical attributes. </p>
+        <p>The mapping concept in PerBAC
+            is relatively simple: if the attributes of a concrete entity (subject, object or action) characterize the corresponding abstract entity (role, view or activity, respectively),
+            then the first one is automatically adapted to it. </p>
+            <p>The attributes of an organization will be both concrete and abstract. </p>
+        <p>The decision to authorize or deny access to a subject for a requested resource (object) is made according to the illustrative figure below
         <p><img src="../../images/per2.png" alt="Processus decision PerBAC" title="Processus de decision PerBAC" style="float: left; margin-right: 20px;width: 780px"/></p>
         <ol>
             <li>
-                <p>L'objet <em>s</em> envoie d'abord une demande <strong>REQ (org, s, o, a)</strong> à un objet <em>o</em> demandé la sur lequel elle veut effectuer une action <em>a</em>.
-                    Cette demande venant de l'organisation <em>org</em> contient la ressource demandée, les spécifications du sujet, objet et action.</p>
+                <p>The object <em>s</em> first sends a request <strong>REQ (org, s, o, a)</strong> to an object <em>o</em> requested the on which it wants to perform an action <em>a</em>.
+                    This request from the organization <em>org</em> contains the requested resource, subject, object and action specifications. </p>
             </li>
             <li>
-                <p>La demande est reçue par le <strong>PEP</strong> et ensuite redirigé vers le <strong>PDP</strong> après l'extraction de certains attributs globaux
-                    également appelés attributs environnementaux <em>(att)</em> . <strong>PDP</strong> envoie une demande au <strong>PIP</strong> pour les attributs des entités
-                    qu'il vient de recevoir.
-                    Une fois que ceux - ci sont obtenus, la demande sera transmise à la fonction de <em>correspondance
-                        pour concaténer</em> les entités concrètes et celles abstraites.</p>
+                <p>The request is received by the <strong>PEP</strong> and then redirected to the <strong>PDP</strong> after extracting some global attributes
+                    also referred to as environmental attributes <em>(att)</em> . <strong>PDP</strong> sends a request to <strong>PIP</strong> for entity attributes
+                    that he just received.
+                    Once these are obtained, the request will be forwarded to the <em>correspondence function
+                        to concatenate</em> concrete and abstract entities. </p>
             </li>
             <li>
-                <p>Maintenant que toutes les informations nécessaires sur toutes les parties prenantes ont été recueillies,
-                    le <strong>PDP</strong> recherche la <em>politique AC</em> de l'organisation et prend la <em>bonne décision</em> sur la base des informations traitées.
-                    Cette décision est ensuite envoyée au <strong>PEP</strong>, qui informe <em>le sujet demandeur</em>.</p>
+                <p>Now that all necessary information on all stakeholders has been collected,
+                    the <strong>PDP</strong> seeks the <em>AC</em>policy of the organization and makes the right decision</em> on the basis of the information processed.
+                    This decision is then sent to the <strong>PEP</strong>, who informs the requesting subject <em>/em>.</p>
             </li>
         </ol>
-        <p>La plupart du temps, les nœuds centraux jouent le rôle du PEP pour leurs noeuds d'extrémité,
-            la couche moins contrainte, la couche de calcul / déchargement aura un composant nuage ou un serveur dédié.
-            Ce composant remplit les rôles du PDP / PIP / PAP et peut correspondre à différents attributs permettant d'accélérer le processus de décision.</p>
-        <p>Pour l'implementation du modèle au sein de notre plate-forme <em><strong>IoT Smart Parking</strong></em> nous avons suivi les diagrammes suivants :</p>
-        <p>Notre Parking intelligent disposant d'un grand nombre de places de stationnement ne possède qu'une entrée et une seule sortie. En outre,
-            les espaces de stationnement sont divisés en plusieurs domaines ou zones, dont chacun est géré par un noeud central.</p>
-        <p>Nous considérerons deux zones : <em><strong>une Zone Standard</strong></em> qui est accessible à tous (public) dans le cadre d'un marché public, et une <em><strong>Zone à Accès Privilégiée</strong></em> .</p>
-        <p>L'accès aux zones est identifié par un Badge <strong>Rouge</strong> ou <strong>Bleu</strong>.</p>
-        <p>Pour <em><strong>le processus d'Identification</strong></em> lors de la demande d'une place de parking , un véhicule est identifié par sa plaque ,
-            et l'utilisateur doit alors présenter un badge d'identification.</p>
-        <p>Pour <em><strong>le processus de choix du noeud</strong></em>  après presentation du badge de l'utilisateur l'algorithme devra sélectionner le noeud central approprié pour traiter la requête entrante.
-            en fonction de la couleur du Badge , l'un des noeuds centraux traitera la demande.</p>
-        <p>Ce sera le <em>Noeud central standard (CN_STANDARD) pour le <strong>Badge Bleu</strong></em> ou le <em>Noeud central privilégié (CN_STANDARD) pour le <strong>Badge Rouge</strong></em></p>
-        <p>Pour <em><strong>le processus de contrôle d'accès</strong></em> après avoir sélectionné le noeud central approprié, l'algorithme lance le processus de prise de décision pour déterminer l' accès à la ressource (espace de stationnement).</p>
-        <p>Ci-dessous les <em><strong>diagrammes de séquence UML explicatifs</strong></em> du processus de <em><strong>sélection d'un noeud central (première)</strong></em> ainsi que du <em><strong>controle d'accès (deuxième)</strong></em> .</p>
+        <p>Most of the time, central nodes play the role of PEP for their end nodes,
+            At the less constrained layer, the computation/unloading layer will have a cloud component or a dedicated server.
+            This component fulfills the roles of PDP / PIP / PAP and can correspond to different attributes to speed up the decision-making process. </p>
+        <p>For the implementation of the model within our platform <em><strong>IoT Smart Parking</strong></em> we followed the following diagrams: </p>
+        <p>Our intelligent car park with a large number of parking spaces has only one entrance and one exit. In addition,
+            parking spaces are divided into several domains or zones, each of which is managed by a central node. </p>
+        <p>We will consider two zones: <em><strong>a Standard Zone</strong></em> which is accessible to all (public) within the framework of a public contract, and a <em><strong>Privileged Access Zone</strong></em> .</p>
+        <p>Access to the zones is identified by a Badge <strong>Red</strong> or <strong>Blue</strong>.</p>
+        <p>For <em><strong>the Identification process</strong></em> when requesting a parking space, a vehicle is identified by its plate,
+            and the user must then present an identification badge. </p>
+            <For <em><strong>the node selection process</strong></em> after presentation of the user's badge the algorithm will have to select the appropriate central node to process the incoming request.
+            depending on the color of the badge, one of the central nodes will process the request. </p>
+        <p>This will be the standard central node (CN_STANDARD) for the <strong>Blue Badge</strong></em> or the preferred central node (CN_STANDARD) for the <strong>Red Badge</strong></em></p>
+        <p>For <em><strong>the access control process</strong></em> after selecting the appropriate central node, the algorithm starts the decision making process to determine access to the resource (parking space).</p>
+        <p>Below are the explanatory UML sequence diagrams</strong></em> of the <em><strong>selection process of a central node (first)</strong></em> as well as the access control (second)</strong><strong> access control (second)</strong></em>.</p>
         <p align="center"><img src="../../images/per3.png" alt="Choix Noeud PerBAC" title="Choix Noeud PerBAC" /></p>
         <p align="center"><img src="../../images/per4.png" alt="Controle d'accès PerBAC" title="Controle d'acces PerBAC" /></p>
-        <p><em>Nous retrouverez  l'implementation sur notre plateforme IoT Smart Parking grace à la section <em><strong><a href="perbac.php">Test</a> </strong></em></em></p>
-        <p>Une <em>video test</em> du contrôle d'accès est aussi implementée à l'aide du <strong>Langage JAVA</strong> et de l'usage de <strong>Fichiers JSONs</strong> se trouve également dans la section <em><strong>Test-Video</strong></em></p>
-
+        <p><em>We will find the implementation on our IoT Smart Parking platform thanks to the section <em><strong><a href="perbac.php">Test</a> </strong></em></em></p>
+        <p>A <em>video test</em> access control is also implemented using <strong>JAVA language</strong> and the use of <strong>JSON files</strong> is also found in the section <em><strong>Test-Video</strong></em></p>
         <br>
     </div>
 </div>
