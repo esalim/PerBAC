@@ -10,20 +10,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">    <!-- Importation de la library Animate-->
     <div class="logininbox">
         <img src="../images/Login-Icon.png" class="avatar">
-        <h1>Connectez vous ici</h1>
+        <h1>Sign In here</h1>
         <form action="index.php" method="post">
             <!-- Declaration des inputs et buttons de l'interface  -->
             <p>Utilisateur</p>
-            <input type="text" name="username" placeholder="Entrer le nom d'utilisateur" required>
+            <input type="text" name="username" placeholder="Username" required>
             <p>Mot de Passe</p>
-            <input type="password" name="password" placeholder="Entrer le mot de passe" required>
+            <input type="password" name="password" placeholder="Password" required>
             <input class="favorite styled"
             <input class="favorite styled"
                    type="submit" id="connect-button" name="submit_button"
-                   value="Se Connecter">
+                   value="Sign In">
             <a href="../php/enregistrement.php"><input class="favorite buttn"
                    type="button" id="enregistr_button"
-                   value="S'enregistrer">
+                   value="Or Register">
         </form>
 
 
@@ -41,7 +41,7 @@
             $stmt = mysqli_stmt_init($conn);
 
             if (!mysqli_stmt_prepare($stmt,$sql)){   // Message d'erreur script avec SweetAlert
-                echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Erreur de traitement de la requete !" ,  "error" )</script>';
+                echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Request processing error !" ,  "error" )</script>';
             }
 
             else {
@@ -53,7 +53,7 @@
                   $pwdcheck=password_verify($password,$row['password']);
 
                   if($pwdcheck==false){   // Password Incorrect
-                      echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Mot de passe incorrect !" ,  "error" )</script>';
+                      echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Wrong Password !" ,  "error" )</script>';
                   }
 
                   else if($pwdcheck==true){   // Connexion reussie avec message script !
@@ -61,21 +61,21 @@
                   $_SESSION['userId']=$row['id'];
                   $_SESSION['userName']=$row['username'];
                   $_SESSION['userFonct']=$row['fonction'];
-                  echo '<script type="text/javascript"> Swal.fire("Bon Travail...!", "Connection reussie!", "success"); 
+                  echo '<script type="text/javascript"> Swal.fire("Good Work...!", "Successful connection!", "success"); 
                      setTimeout(function () {
-                          window.location.href="../home/index.html";  // the redirect goes here
+                          window.location.href="../php/homepage.php";  // the redirect goes here
                       },2500);
                    </script>';
 
                   }
 
                   else {
-                      echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Erreur rencontrée !" ,  "error" )</script>';
+                      echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Error encountered !" ,  "error" )</script>';
 
                   }
 
                 } else {
-                  echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "Aucun utilisateur correspondant aux valeurs entrées !" ,"error")</script>';
+                  echo '<script type="text/javascript"> Swal.fire ( "Oops...!" ,  "No user matching the entered values !" ,"error")</script>';
                 }
 
               }

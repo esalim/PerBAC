@@ -6,7 +6,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Comparatifs & Résultats</title>
+    <title>Comparatives & Résults</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -21,8 +21,7 @@
 <nav>
     <div class="topnav">   <!-- affichage de la barre de navigation -->
         <a class="headlogo"> <img height="50" width="50" src="../images/smart_parking.png" alt="logo"> </a>
-        <a href="../home/index.html">Home</a>
-        <a href="websocket.php">Dashboard</a>
+        <a href="../../benchmark/php/homepage.php">Description</a>
         <a href="zend-rbac/description.php">RBAC</a>
         <a href="php-abac/description.php">ABAC</a>
         <a href="PerBAC/description.php">PerBAC</a>
@@ -35,83 +34,39 @@
                 <i class="fa fa-caret-down"></i>
             </button>
             <div class="dropdown-content">
-                <a href="../../php/index.php">Sign In</a>
-                <a href="../../php/enregistrement.php">Sign Up</a>
+                <a href="../../benchmark/php/index.php">Sign In</a>
+                <a href="../../benchmark/php/enregistrement.php">Sign Up</a>
             </div>
         </div>
-        <a href="../../php/index.php" id="logout">Sortir</a>
+        <a href="../../benchmark/php/index.php" id="logout">Logout</a>
     </div>
 </nav>
 
 <div class="login-form">
     <form action="resultats.php" method="post">
-        <h2 align="center"><a href="#compartifs-des-performances-des-differents-contrôles-daccès-"
-                              id="compartifs-des-performances-des-differents-contrôles-daccès-">Comparatifs des
-                performances des différents contrôles d'accès :</a></h2>
-        <p>La protection des données et de la <em><strong>vie privée</strong></em> des personnes est devenue aujourd’hui
-            un <em>enjeu majeur</em> pour les entreprises et les organisations gouvernementales qui collectent
-            et entreposent les données à caractère personnel.L’adoption <em><strong>d’une politique de sécurité</strong></em> est donc impératif , raison pour laquelle
-            nous avons implémenter divers modèles de contrôle d’accès au sein de notre plate-forme IoT afin de fournir
-            une sécurité optimale.</p>
-        <p>Cependant chacun de ces modèles présente des <em><strong>forces et des faiblesses</strong></em> , il convient
-            donc mieux connaître les modèles de contrôles d’accès avant
-            de les implémenter.</p>
-        <p>Ainsi nous allons donc dégager <em><strong>les principaux éléments qui caractérisent nos contrôles
-                    implémentés ainsi que quelques critères susceptibles de nous aider à opter pour un contrôle d'accès
-                    en particulier</strong></em>.</p>
-        <h3><a href="#temps-de-réponse-" id="temps-de-réponse-">Temps de réponse :</a></h3>
-        <p><img src="../images/repon.PNG" alt="Temps Reponse AC" title="Temps de réponse des ACs " style="float: right;width: 500px;height: 350px ; margin-left: 30px;"/></p>
+             <h2 align="center"><a href="#compartifs-des-performances-des-differents-contrôles-daccès-"
+                              id="compartifs-des-performances-des-differents-contrôles-daccès-">Comparisons of the
+                performance of the various access controls : </a></h2>
+        <p></p>
+        <p></p>
+        <h3><a href="#temps-de-réponse-" id="temps-de-réponse-">Response Time :</a></h3>
+        <p><img src="../images/repon.JPG" alt="Temps Reponse AC" title="Temps de réponse des ACs " style="float: right;width: 500px;height: 350px ; margin-left: 30px;"/></p>
+        <p>In general <em><strong>the response time</strong></em> is the time required for an action, following
+            a stimulus is completed. </p>
+            <p>In order to be able to give a value we have performed several times the execution of various queries in order to be able to give an average estimate of this response time and we have seen as presented on the graph that it is the model <strong><em>RBAC</em></strong> here that has the fastest time, this is explained by its role concept which wants to be a static model where the rules evolve very little. </p>
+        <p>We also notice that it is the PerBac model given its flexibility and finally <strong><em> an improvement of the response time</em></strong> when implementing the XACML Language to the ABAC model since it allows to refine the access control policy</p>
         <br>
-        <p>En général <em><strong>le temps de réponse</strong></em> est le temps nécessaire pour qu'une action, suite à
-            un stimulus, soit achevée.</p>
-        <p>Nous constatons qu'a partir de notre graphe que c'est le modèle <strong><em>RBAC</em></strong> ici qui dispose du temps le plus rapide , cela s'explique par son concept de role qui se veut etre un modèle statique ou les règles évoluent très peu. </p>
-        <p>On remarque également <strong><em>une amélioration du temps de réponse</em></strong> offert par l'implémentation du Langage XACML puisque celle ci permet d'affiner la politique de contrôle d'accès</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <h3><a href="#complexité-" id="complexité-">Complexité :</a></h3>
-        <p><img src="../images/complex.png" alt="Complexité AC" title="Complexité des ACs " style="float: left;width: 500px;height: 500px ; margin-right: 50px;"/></p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p ><em><strong>La complexité</strong></em> désigne le caractère d'un système, un état formé a la suite de
-            nombreux éléments, qui est difficile à percevoir.</p>
-        <p>Sur le graphe suivant nous constatons que c'est le modele <strong>RBAC</strong>
-            qui présente <em>la plus faible complexité</em> puisqu'il ne fait appel aux concepts d'attributs et
-            n'utilise pas un langage à syntaxe compliquée.</p>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <br>
-        <p align="center">Ci dessous un histogramme comparatif selon divers critères concernant les différents contrôles d'accès
-            existants :</p>
-        <p align="center"><img src="../images/eval.png" alt="Evaluation des critères des ACs existants"
-                title="*Evaluation des Critères des ACs existants "/></p>
-        <p><em><strong>Note :</strong></em></p>
-        <pre><code>* La scalabilité désigne la capacité à maintenir ses fonctionnalités et ses performances même en cas de forte demande.
+        <h3><a href="#table-de-test-" id="table-de-test-">Tests Tables :</a></h3>
+        <p>We also find a comparative table of the different results obtained after various tests
+            performed on the IOT platform.These various tests are the result of several experiments under various conditions in order to determine the general functioning of the access control models implemented.</p>
+        <p>In particular, we have : </p>
+        <ul>
+<li><em>Response times obtained using a function from the time library indicating the time required for processing. </em>.</li>
 
-* La granularité définit le niveau de détail (grain) de l’information présentée. Dans notre cas plus la grammaire de la police d'accès aux ressource est souple plus precis sera le contrôle d'acces.
+<li><em>The test of availability checks of places and user rights implemented in real time</em>.</li>
 
-* La délégation représente la faculté d'un sujet à pouvoir accorder des droits d'accès ou une partie des droits à un autre sujet.
-
-* L'interopérabilité est la capacité que possède un produit ou un système, à fonctionner avec d’autres produits ou systèmes existants ou futurs et ce sans restriction d’accès ou de mise en œuvre.
-
-* L'utilisabilité fait parti du terme plus général «expérience utilisateur» et fait référence à la facilité d'accès et / ou d'utilisation d'une ressource.
-
-* Les services axés sur l'utilisateur représente l'ensemble des activités ou une certaine responsabilité est accorder à l’utilisateur.
-
- Il doit être placé au centre du système, en tant que point d'intégration , de création et de contrôle.
-            </code></pre>
-        <p>Nous retrouvons même également un tableau comparatif des différents résultats obtenus après divers tests
-            effectués sur la plate-forme IOT :</p>
+<li><em>As well as various other elements such as scalability, usability, offloading etc... which are performance indicators remarks of the models according to the environmental conditions IoT<em>.</li>
+</ul>
         <table align="center">
             <thead align="center">
             <tr>
@@ -124,119 +79,119 @@
             </thead>
             <tbody align="center">
             <tr>
-                <td><em><strong>Temps de réponse</strong></em></td>
-                <td> 177 ms</td>
-                <td >200 ms</td>
-                <td>248 ms</td>
-                <td>185 ms</td>
+                <td><em><strong>Response time</strong></em></td>
+                <td> 46 ms</td>
+                <td >85 ms</td>
+                <td>65 ms</td>
+                <td>68 ms</td>
             </tr>
             <tr>
-                <td><em><strong>Complexité</strong></em></td>
-                <td> Modèle le plus simple d'implementation et qui présente une bon temps d'execution puisque la vérification
-                    est assez allégée par rapport aux autres modèle qui
-                    utilise la concept d'attributs.
+                <td><em><strong>Complexity</strong></em></em></td>
+                <td> The simplest model of implementation and which has a good execution time since the verification
+                    is quite lightweight compared to other models that
+                    uses the concept of attributes.
                 </td>
-                <td> L'interprétation sémantique des attributs, leur fiabilité , la définition de la
-                    syntaxe pour l'expression des demandes d'autorisations basées sur les attributs et des réponses sont
-                    toutes les principales raisons qui rende ce modèle plus complexe.
+                <td> The semantic interpretation of attributes, their reliability, the definition of the
+                    syntax for expressing attribute-based authorization requests and responses are
+                    all the main reasons that make this model more complex.
                 </td>
-                <td> Modèle assez complexe , puisque basée en grande partie sur ABAC et utilisant surtout
-                    le concept de plusieurs attributs et permissions.Une grande amélioration du temps de réponse sera
-                    possible grace au l'offloading.
+                <td> Quite complex model, since it is largely based on ABAC and uses mainly
+                    the concept of several attributes and permissions, a great improvement in response time will be
+                    possible thanks to offloading.
                 </td>
-                <td> Puisqu'il utilisé par ABAC pour la définition des politiques, la formulation de la
-                    demande et ses réponses , ainsi que la maintenance de l'architecture ce langage est basé sur XML, ce
-                    qui limite beaucoup la lisibilité. XML est bien connu pour être un langage très prolixe (trop
-                    long/bavard).Raison pour laquelle de nombreux utilisateurs préfèrent utiliser le format JSON qui
-                    offre une meilleure lisibilité.
+                <td>Since it is used by ABAC for policy making, the formulation of the
+                    request and its answers, as well as the maintenance of the architecture this language is based on XML, this
+                    which greatly limits readability. XML is well known to be a very prolific language (too
+                    This is why many users prefer to use the JSON format, which
+                    provides better readability.
                 </td>
             </tr>
             <tr>
-                <td><em><strong>Scalabilité</strong></em></td>
-                <td> Très critique puisque les politiques d'acces ne peuvent pas évoluer facilement.En
-                    effet la création de nouveaux rôles entraînera la reconstruction entière du modèle.
+                <td><em><strong>Scalability</strong></em></em></td>
+                <td>Very critical since access policies cannot easily evolve.
+                    effect the creation of new roles will lead to the complete reconstruction of the model.
                 </td>
-                <td> Dispose d'une bonne scabilité.</td>
-                <td> Bonne scalabilité offerte grace au concept d'attributs abstraits ( gère un grand
-                    nombre d'accès selon la politique d'acces).
+                <td> Has good scability. </td>
+                <td> Good scalability offered thanks to the concept of abstract attributes ( manages a large
+                    number of accesses according to the access policy).
                 </td>
-                <td> Contribue grandement à là scalabilité du modèle en dynamisant les règles.</td>
+                <td>Contributes greatly to the scalability of the model by dynamizing the rules.
             </tr>
             <tr>
-                <td><em><strong>Utilisabilité</strong></em></td>
-                <td> Ce modèle présente un niveau assez bas pour cette fonctionnalité puisque les règles restent très statiques étant donnée les caractéristiques du modèle même si son implémentation reste facile.</td>
-                <td> ABAC présente un niveau moyen d'utilisabilité puisque qu'elle implémente le langage XACML qui est un langage assez complexe et nécessite un certains temps d'adaptation pour l'utilisateur.</td>
-                <td> PerBAC présente un niveau d'utilisabilité plus élevé que celui de RBAC grace aux fonctionnalités de l'orBAC implémentées qui lui permettent de définir une politique de sécurité indépendamment de son implémentation.</td>
-                <td> L'utilisabilité de ce langage dans sa forme XML est assez hardu et difficile dans un premier temps , raison pour laquelle de nombreux utilisateurs se tournent plus vers le format JSON.</td>
+                <td><em><strong>Usability</strong></em></em></td>
+                <td>This model has a fairly low level for this functionality since the rules remain very static given the characteristics of the model even if its implementation remains easy.</td>
+                <td>ABAC has an average level of usability since it implements the XACML language, which is a rather complex language and requires a certain amount of adaptation time for the user.</td>
+                <td>PerBAC has a higher level of usability than RBAC due to the implemented orBAC features that allow it to define a security policy regardless of its implementation. </td>
+                <td>The usability of this language in its XML form is quite difficult and difficult at first, which is why many users are turning more to the JSON format. </td>
             </tr>
             <tr>
-                <td><em><strong>Services axés sur utilisateur</strong></em></td>
-                <td> il n'y a pas de fonctionnalité intégrée implémentant cette propriété.</td>
-                <td> Bien que ABAC soit considéré comme complet et qu'il présente des méthodes de description des règles précises grace à XACML, la structure d’une règle XACML est complexe. En effet, l'utilisateur est obligé de comprendre XACML
-                    très bien et d'écrire la politique verbeuse habilement , ce qui rend ce modèle peu centrée sur l'utilisateur.</td>
+                <td><em><strong>User-focused services</strong></em></em></td>
+                <td> there is no built-in functionality implementing this property. </td>
+                <td>Although ABAC is considered complete and presents methods for describing specific rules using XACML, the structure of an XACML rule is complex. Indeed, the user is obliged to understand XACML
+                    very well and write the verbose policy skillfully, which makes this model less user-centered. </td>
                 <td>
-                    PerBAC offre une bonne intégration de cette fonctionnalité puisque le contrat d'accès place l'utilisateur au centre des différentes activités.</td>
-                <td> Ce type de langage ne favorise pas le concept de confidentialité puisqu'il ne prend pas en charge les interactions avec l'utilisateur de manière native
-                    alors qu'un gestionnaire de la confidentialité axé sur l'utilisateur est nécessaire pour impliquer l'utilisateur dans le processus de définition de la politique.</td>
+                    PerBAC offers a good integration of this functionality since the access contract places the user at the center of the different activities. </td>
+                <td>This type of language does not promote the concept of confidentiality since it does not support user interactions in a native way
+                    while a user-centred privacy manager is required to involve the user in the policy development process. </td>
             </tr>
             <tr>
-                <td><em><strong>Un utilisateur essayant d'accéder à un ressource n'appartenant pas à un rôle existant /
-                            inconnu</strong></em></td>
-                <td> Le RBAC est basé sur les rôles. Donc une personne qui tente d'accéder à un ressource
-                    sans rôle est immédiatement rejeté.
+                <td><em><strong>A user trying to access a resource that does not belong to an existing role /
+                            unknown</strong></em></em></td>
+                <td>The RBAC is role-based. So a person trying to access a resource
+                    without a role is immediately rejected.
                 </td>
-                <td> ABAC est un contrôle d’accès basé sur attributs et non sur les rôles alors la
-                    décision dépendra de la politique de contrôle d'accès mise en œuvre.
+                <td> ABAC is an access control based on attributes and not on roles so the
+                    decision will depend on the access control policy implemented.
                 </td>
-                <td> PerBAC étant construit sur ABAC, il peut gérer le AC si la politique AC le permet.
+                <td> PerBAC being built on ABAC, it can manage the CA if the CA policy allows it.
                 </td>
-                <td> Ce utilisateur devrait etre bien sur inscrit comme ayant droit dans le fichier de
-                    règle écrit selon cette syntaxe pour disposer de l'accès à cette ressource
-                </td>
-            </tr>
-            <tr>
-                <td><em><strong>Deux invités tentant d'acceder à la même ressource et au même moment</strong></em></td>
-                <td>Deux invités se connectant au même temps causer une légère surcharge comparé à une
-                    seule connexion à un moment donné.
-                </td>
-                <td> La tentative d'accès simultané donne le même résultat qu'avec RBAC mais consomme
-                    plus de temps puisque ABAC prend plus en considération plus de paramètres comparés à RBAC.
-                </td>
-                <td> PerBac souffre aussi de ce problème parce que l'accès simultané causera une léger
-                    débordement au noeud où le code sera mis en œuvre. Quand ce nombre dépasse deux et atteint un très
-                    grand nombre nous allons parler d'attaque DOS (Déni de Service).
-                </td>
-                <td> Support très léger de la fonctionnalité.</td>
-            </tr>
-            <tr>
-                <td><em><strong>Un utilisateur essayant d'acceder à une place déjà réservée</strong></em></td>
-                <td> Immédiatement rejeté.</td>
-                <td> Immédiatement rejeté.</td>
-                <td> Un message sera envoyé à un invité tentant d'accéder à un endroit déjà pris afin de
-                    lui recommander un autre endroit, soit dans le même parking ou un autre parking annexe.
-                </td>
-                <td> En fonction des règles inscrites mais en général accès non autorisé pour mesure de
-                    sécurité.
+                <td> This user should of course be registered as the rightful owner in the
+                    rule written according to this syntax to have access to this resource
                 </td>
             </tr>
             <tr>
-                <td><em><strong>Offloading</strong></em></td>
-                <td> Il n'y a pas de fonctionnalité intégrée mettant en œuvre cette propriété.</td>
-                <td> Il n'y a pas de fonctionnalité intégrée mettant en œuvre cette propriété.</td>
-                <td> Le serveur peut gérer plusieurs nœuds en raison de sa capacité à externalizer le
-                    calcul vers des entités plus puissantes (nœuds centraux,Cloud, Blockchain,…).
+                <td><em><strong>Two guests trying to access the same resource at the same time</strong></em></em></td>
+                <td>Two guests connecting at the same time cause a slight overload compared to a
+                    only connection at a given time.
                 </td>
-                <td> Il n'y a pas de fonctionnalité intégrée mettant en œuvre cette propriété.</td>
+                <td>The simultaneous access attempt gives the same result as with RBAC but consumes
+                    more time since ABAC takes more into consideration more parameters compared to RBAC.
+                </td>
+                <td>PerBac also suffers from this problem because simultaneous access will cause a slight
+                    overflow at the node where the code will be implemented. When this number exceeds two and reaches a very high
+                    many of us will talk about a DOS (Denial of Service) attack.
+                </td>
+                <td> Very light support for functionality. </td>
             </tr>
             <tr>
-                <td><em><strong>Collaboration (quand le sujet et la ressource appartiennent à la même organisation)</strong></em></td>
-                <td> Il n'y a pas de fonctionnalité intégrée mettant en œuvre cette propriété.</td>
-                <td> Il n'y a pas de fonctionnalité intégrée mettant en œuvre cette propriété.</td>
-                <td> PerBAC étant également basé sur les attributs , l'organisation elle-même possède des
-                    attributs, ainsi que les ressources elles aussi. Le plus important attribut est le
-                    contrat.L'autorisation dépendra de la valeur de ces derniers, qu'ils soient privés ou publics.
+                <td><em><strong>A user trying to access a space already reserved</strong></em></td>
+                <td> Immediately rejected. </td>
+                <td> Immediately rejected. </td>
+                <td>A message will be sent to a guest trying to access a previously taken location in order to
+                    recommend another place, either in the same parking lot or another secondary parking lot.
                 </td>
-                <td> Il n'y a pas de fonctionnalité intégrée mettant en œuvre cette propriété.</td>
+                <td> Depending on the rules entered but generally unauthorized access for the purpose of
+                    security.
+                </td>
+            </tr>
+            <tr>
+                <td><em><strong>Offloading</strong></em></em></td>
+                <td>There is no built-in functionality implementing this property. </td>
+                <td>There is no built-in functionality implementing this property. </td>
+                <td> The server can manage multiple nodes due to its ability to outsource the
+                    calculation to more powerful entities (central nodes, Cloud, Blockchain,...).
+                </td>
+                <td>There is no built-in functionality implementing this property. </td>
+            </tr>
+            <tr>
+                <td><em><strong>Collaboration (when subject and resource belong to the same organization)</strong></em></em></td>
+                <td>There is no built-in functionality implementing this property. </td>
+                <td>There is no built-in functionality implementing this property. </td>
+                <td>Since PerBAC is also based on attributes, the organization itself has
+                    attributes, as well as resources as well. The most important attribute is the
+                    The authorization will depend on the value of the latter, whether they are private or public.
+                </td>
+                <td>There is no built-in functionality implementing this property. </td>
             </tr>
             </tbody>
         </table>
@@ -244,16 +199,3 @@
 </div>
 </body>
 </html>
-
-
-Bonjour , comme nous avions convenu ci-joint les liens pour l'achat concernant la plateforme Cloud et la Map implementée dans le projet.
-**********************Cloud*************************
-Lien d'inscription : https://accounts.artik.cloud/signup?client_id=d18f11efb5244c8f99f1ac7aa4fb9bbc&response_type=code&redirect_uri=https%3A%2F%2Fmy.artik.cloud%2Fauthorize
-Lien d'achat : https://artik.cloud/pricing/
-
-**********************Gooogle Maps*************************
-Lien : https://cloud.google.com/maps-platform/?apis=maps 
-Choisir l'option Maps et se laisser guider par les instructions.
-Choisir un nom de projet puis integrer l'API Google Maps de Javascript a ajouter sur son compte et terminer par l'ajout d'un compte de facturation.
-
-Lien documentation api : https://developers.google.com/maps/documentation/javascript/get-api-key

@@ -5,7 +5,7 @@
 $servername="localhost";
 $DBusername="root";
 $DBpassword="";
-$DBname=""; // Creation de la base de données.
+$DBname="smartparking"; // Creation de la base de données.
 
 $conn = mysqli_connect($servername,$DBusername,$DBpassword,$DBname);
 
