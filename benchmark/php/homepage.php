@@ -45,67 +45,63 @@
 
 <div class="login-form">
     <form action="homepage.php" method="post">
-        <h2 align="center"><a href="#Smart IoT Parking">Smart IoT Parking :</a></h2>
+       <h2 align="center"><a href="#Smart IoT Parking">Smart IoT Parking :</a></h2>
         <h2 id="description">Description</h2>
 
-<p><img src="../images/smartpark1.jpg" alt="Description" title="Description " style="float: right;width: 500px;height: 400px ; margin-left: 30px;"/></p>
+<p><img src="../images/smartpark1.jpg" alt="Description" title="Description " style="float: right;width: 500px;height: 300px ; margin-left: 30px;"/></p>
 
-<p>Aujourd’hui, plus d’un citadin sur deux exprime un besoin grandissant en termes de mobilité.
-La mobilité n’est pas uniquement basée sur le développement d’infrastructures et de services de transport ; elle est aussi le fait de s’intéresser au comportement de la populations dans ses déplacements.</p>
+<p>Smart Parking allows the development of car parks thanks to new technologies.</p>
 
-<p>La motorisation de la population continue ainsi de croître, ce qui rend inévitable <em>l’augmentation de la consommation énergétique et des émissions de carbone</em>.
-Afin de pallier à ce problème , une solution est née : l'utilisation des <strong><em>Smart Parking</em></strong>. Il s'agit là de l’aménagement des parkings grâce aux nouvelles technologies.</p>
-
-<p>Il règle les problèmes communs des usagers et permet notamment :</p>
+<p>It solves the common problems of the users and allows in particular : </p>
 
 <ul>
-<li><em>Gain de temps grâce au guidage à la place (Envoi de la disponibilité des places vers les emplacements adéquats)</em>.</li>
+<li><em>Time saving thanks to the guidance instead (Sending of the availability of the places to the adequate places)</em>.</li>
 
-<li><em>Forte économie d'energie grace à la réduction significative de carbone lors de la recherche des usagers</em>.</li>
+<li><em>High energy saving thanks to the significant reduction of carbon during the research of the users</em>.</li>
 
-<li><em>D'assurer une importante sécurité, sérénité et convivialité par la mise en place de contrôle d'accès adéquat pour l'utilisateur<em>.</li>
+<li><em>To ensure an important security, serenity and user-friendliness by the establishment of adequate access control for the user.<em>.</li>
 </ul>
 <br>
 <br>
-<h2 float ="right" id="fonctionnement">Fonctionnement</h2>
+<h2 float ="right" id="fonctionnement">Operation</h2>
 
-<p>Notre Parking intelligent disposant d’un grand nombre de places de stationnement ne possède qu’une entrée et une seule sortie.En outre, les espaces de stationnement sont
-divisés en plusieurs domaines ou zones, gérées chacune par un noeud central.</p>
+<p>Our Smart Parking with a large number of parking spaces has only one entrance and one exit.</p>
 
-<p>Nous considérerons dans notre cas uniquement deux zones : <em>une zone standard</em> qui est accessible à tous (public) , et <em>une zone à accès privilégiée</em>.
-Pour le processus d’identification lors de la demande d’une place de parking, un véhicule est identifié par sa <strong><em>plaque ou un tag RFID</em></strong>, et l’utilisateur doit alors présenter un
-<strong><em>badge d’identification (badge bleu ou rouge)</em></strong> pour l'accès à l'une des zones.</p>
+<p>We will consider in our case only two areas: <em>a standard area </em> a standard area that is accessible to all (public) , and <em>  a privileged access area</em>.
+For the identification process when requesting a parking space, a vehicle is identified by its <strong><em>plate</em></strong>, and the user must then submit a
+<strong><em>identification badge (blue or red badge)</em></strong> for access to one of the zones.</p>
 
-<p>Pour le processus de choix du noeud après présentation du badge de l’utilisateur,l’algorithme devra sélectionner le noeud central approprié pour traiter la requête entrante
-et ce en se servant de la couleur du badge de l’utilisateur.</p>
+<p>For the process of choosing the node after presenting the user's badge,the algorithm will have to select the appropriate central node to process the incoming request using the color of the user's badge.</p>
 
-<p>Le principe de fonctionnement des objets, et de tout l’environnement en général se présente ainsi :</p>
+<p>The principle of operation of objects, and of the whole environment in general is as follows: </p>
 
 <ul>
-<li><strong><em>Au niveau des objets :</em></strong> Différents traitements internes permettent de déterminer la valeur des places disponibles grâce aux <strong>capteurs ultrasons</strong> connectés aux cartes arduino et qui détectent la présence d’un objet. Les cartes arduino envoient ensuite ces données au niveau du nœud central.Lorsque les capteurs ultrasons détectent une présence, des LEDs de couleurs différentes sont allumées afin d’indiquer le nombre de places disponibles par la suite.</li>
+<li><strong><em>At the level of the objects : </em></strong> Various internal processes make it possible to determine the value of the places available thanks to the <strong>ultrasonic sensors</strong> connected to arduino cards and which detect the presence of an object. The arduino cards then send this data to the central node. When the ultrasonic sensors detect a presence, LEDs of different colors are lit to indicate the number of places available thereafter. </li>
 </ul>
 
+ 
 <ul>
-<li><strong><em>Au niveau du nœud central :</em></strong> Les données provenant des cartes arduino chaque 30s, sont récupérées via la technologie serialport puis envoyées vers <strong>le serveur local</strong> qui stockera le fichier de données. L'etape suivante est la transmission des données vers la plateforme <strong>ThingSpeak</strong> pour la visualisation. Cette dernière étape se fera grace à la création d'une <strong>channel et l'utilisation de la clé API</strong> fourni par ThingSpeak.</li>
-<p  align="center">Un description et de plus amples informations sur la proceduire d'installation sont disponibles à partir du lien github <a href="https://github.com/esalim/PerBAC"><strong><em>PerBAC</em></strong></a></p>
+<li><strong><em>At the central node level : </em></strong> The data from arduino cards every 30s, are retrieved via serialport technology and then sent to <strong>the local server</strong> that will store the data file. The next step is the transmission of data to the <strong>ThingSpeak</strong> platform for visualization. This last step will be done through the creation <strong> of a channel and the use of the API key</strong> provided by ThingSpeak.</li>
+<p  align="center">A description and more information about the installation procedure is available from the github link of <a href="https://github.com/esalim/PerBAC"><strong><em>PerBAC</em></strong></a></p>
     <br>
-    <p><img src="../images/smartpark2.jpg" alt="Traitement 1" title="Traitement 1 " style="float: right;width: 780px;height: 400px ; margin-right: 0px;margin-bottom:60px"/></p>
-<p><img src="../images/smartpark3.jpg" alt="Traitement 2" title="Traitement 2 " style="float: left;width: 780px;height: 400px ; margin-right: 0px;margin-bottom:60px"/></p>
+    <p><img src="../images/smartpark2.jpg" alt="Traitement 1" title="Traitement 1 " style="float: right;width: 600px;height: 400px ; margin-right: 0px;margin-bottom:60px"/></p>
+<p><img src="../images/smartpark3.jpg" alt="Traitement 2" title="Traitement 2 " style="float: left;width: 600px;height: 400px ; margin-right: 0px;margin-bottom:60px"/></p>
 </ul>
 
 
 <br>
 <br> 
 <br>
-<h2 id="contrledaccs">Contrôle d'accès</h2>
+<h2 id="contrledaccs">Access control </h2>
 
-<p>La sécurité est un facteur très important dans l'implementation de nouvelles technologies visant à améliorer les conditions de vie des usagers. C'est pour cette raison que nous avons pris soin d'implementer divers contrôles d'accès de sécurité au sein de notre plate-forme.</p>
+<p>Security is a very important factor in the implementation of new technologies aimed at improving the living conditions of users. For this reason, we have taken care to implement various security access controls within our platform.</p>
 
-<p>Ces contrôles d'accès possèdent tous des fonctionnalités spécifiques leur permettant de satisfaire les divers besoins des utilisateurs tout en implémenter des politiques d'accès robustes et flexibles.</p>
+<p>These access controls all have specific capabilities that allow them to meet the diverse needs of users while implementing flexible and robust access policies.</p>
 
-<p>Les différents contrôles d'accès implémentés sont <strong><em>RBAC , ABAC , XACML(ABAC) &amp; PerBAC</em></strong>.</p>
+<p>The different access controls implemented are <strong><em>RBAC , ABAC , XACML(ABAC) &amp; PerBAC</em></strong>.</p>
 
-<p><em>La plateforme intégre un fichier descriptif , des tests d'evalutions de chaque modèle de contrôle d'accès ainsi qu'une section comparatives selon divers critères des modèles implémentés.Ces elements sont disponibles au niveau des <strong>onglets de la barre de navigation</strong></em>.</p>
+<p><em>The platform integrates a descriptive file, evaluation tests of each access control model as well as a comparative section according to various criteria of the implemented models. These elements are available at the 
+ <strong>the tabs of the navigation bar</strong></em>.</p>
     </form>
 </div>
 </body>
