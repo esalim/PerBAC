@@ -56,19 +56,18 @@
                 Role Based Access Control (RBAC) is a model and access control structure that <em><strong>controls 
                 user access to resources based on their roles</strong></em>.</p>
                 <p> A role usually stems from the structure of a company. Users with similar functions can be grouped under the same role (<em>Ex</em> : accountant , commercial...)</p>
-                <p> This is a link between users and resources.</p>
-                <p> A role, determined by a central authority, associates a subject with access permissions on a set of objects.</p>
+                <p> A role, determined by a central authority, associates a subject to its access permissions on a set of objects.</p>
                 <p>We find below an illustrative figure of the model : </p>
                 <br>
                 <p align="center"><img src="../../images/rbac_overview.png" alt="RBAC Modèle"  height="380"  width="1000" title="Role Based Access Control Model " /></p>
                 <br>
-                <p>For the implementation of the model within our platform <em><strong>IoT Smart Parking</strong></em> we used an online database (storage of available places) and <a href="https://docs.zendframework.com/zend-permissions-rbac/intro/"><em><code>zend-framework</code></em></a> , a framework that contains the descriptive classes and presents the model RBAC as follows : </p>
+                <p>To implement RBAC in <em><strong>IoT Smart Parking</strong></em> platform we used an online database (storage of available places) and <a href="https://docs.zendframework.com/zend-permissions-rbac/intro/"><em><code>zend-framework</code></em></a> , a framework that contains the descriptive classes and presents the model RBAC as follows : </p>
                 <ul>
-                    <li><em>An identity has one or more roles.</em></li>
-                    <li><em>a role requests access for authorization to a resource</em></li>
-                    <li><em>an authorization is given to a role.</em></li>
+                    <li><em>A subject belongs to one or more roles.</em></li>
+                    <li><em>A role requests access to a resource</em></li>
+                    <li><em>An authorization is given to a role.</em></li>
                 </ul>
-                <p>This obviously according to the access policy (security rules) present on the platform.</p>
+                <p>This is done according to the access policy (security rules).</p>
                 <p>Below is an explanatory diagram of the access procedure : </p>
                 <br>
                 <p align="center">
