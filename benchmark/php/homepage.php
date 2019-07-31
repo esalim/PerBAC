@@ -1,4 +1,4 @@
-﻿<?php session_start() ?>
+<?php session_start() ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -55,9 +55,9 @@
 <p>It solves the common problems of the users and allows in particular : </p>
 
 <ul>
-<li><em>Time saving thanks to the guidance instead (Sending of the availability of the places to the adequate places)</em>.</li>
+<li><em>Time saving thanks to the smart and automated guidance</em>.</li>
 
-<li><em>High energy saving thanks to the significant reduction of carbon during the research of the users</em>.</li>
+<li><em>High energy saving thanks to the significant reduction of fuel when searching for a free place</em>.</li>
 
 <li><em>To ensure an important security, serenity and user-friendliness by the establishment of adequate access control for the user.<em>.</li>
 </ul>
@@ -67,22 +67,24 @@
 
 <p>Our Smart Parking with a large number of parking spaces has only one entrance and one exit.</p>
 
-<p>We will consider in our case only two areas: <em>a standard area </em> a standard area that is accessible to all (public) , and <em>  a privileged access area</em>.
+<p>In addition, the parking spaces are divided into several areas or zones, each managed by a central node.</p>
+
+<p>We will consider in our case only two zones : <em>a standard zone </em> a standard area that is accessible to all (public) , and <em>  a privileged access zone </em>.
 For the identification process when requesting a parking space, a vehicle is identified by its <strong><em>plate</em></strong>, and the user must then submit a
-<strong><em>identification badge (blue or red badge)</em></strong> for access to one of the zones.</p>
+<strong><em>identification badge (blue or red badge)</em></strong> for to access one of the two zones.</p>
 
 <p>For the process of choosing the node after presenting the user's badge,the algorithm will have to select the appropriate central node to process the incoming request using the color of the user's badge.</p>
 
-<p>The principle of operation of objects, and of the whole environment in general is as follows: </p>
+<p>The smart parking environment functions as follows : </p>
 
 <ul>
-<li><strong><em>At the level of the objects : </em></strong> Various internal processes make it possible to determine the value of the places available thanks to the <strong>ultrasonic sensors</strong> connected to arduino cards and which detect the presence of an object. The arduino cards then send this data to the central node. When the ultrasonic sensors detect a presence, LEDs of different colors are lit to indicate the number of places available thereafter. </li>
+<li><strong><em>At the objects : </em></strong> Various internal processes make it possible to determine the value of the places available thanks to the <strong>ultrasonic sensors</strong> connected to arduino cards and which detect the presence of an object. The arduino cards then send this data to the central node. When the ultrasonic sensors detect a presence, LEDs of different colors are lit to indicate the number of places available thereafter. </li>
 </ul>
 
  
 <ul>
-<li><strong><em>At the central node level : </em></strong> The data from arduino cards every 30s, are retrieved via serialport technology and then sent to <strong>the local server</strong> that will store the data file. The next step is the transmission of data to the <strong>ThingSpeak</strong> platform for visualization. This last step will be done through the creation <strong> of a channel and the use of the API key</strong> provided by ThingSpeak.</li>
-<p  align="center">A description and more information about the installation procedure is available from the github link of <a href="https://github.com/esalim/PerBAC"><strong><em>PerBAC</em></strong></a></p>
+<li><strong><em>At the central node level : </em></strong> The data from arduino cards , are retrieved through serialport every 30s  and then sent to <strong>the local server</strong> that will store the data file. The next step is the transmission of data to the <strong>ThingSpeak Cloud </strong> platform for visualization. This last step will be done through the creation <strong> of a channel and the use of the API key</strong> provided by ThingSpeak.</li>
+<p  align="center">A description and more information about the installation procedure is available in the <a href="https://github.com/esalim/PerBAC"><strong><em>PerBAC</em></strong></a> github link </p>
     <br>
     <p><img src="../images/smartpark2.jpg" alt="Traitement 1" title="Traitement 1 " style="float: right;width: 600px;height: 400px ; margin-right: 0px;margin-bottom:60px"/></p>
 <p><img src="../images/smartpark3.jpg" alt="Traitement 2" title="Traitement 2 " style="float: left;width: 600px;height: 400px ; margin-right: 0px;margin-bottom:60px"/></p>
@@ -94,14 +96,14 @@ For the identification process when requesting a parking space, a vehicle is ide
 <br>
 <h2 id="contrledaccs">Access control </h2>
 
-<p>Security is a very important factor in the implementation of new technologies aimed at improving the living conditions of users. For this reason, we have taken care to implement various security access controls within our platform.</p>
+<p>Security is a very important factor in the implementation of new technologies aimed at improving the living conditions of users. For this reason, we implemented various access controls solutions within our platform.</p>
 
-<p>These access controls all have specific capabilities that allow them to meet the diverse needs of users while implementing flexible and robust access policies.</p>
+<p>All these access controls models have specific capabilities that allow them to meet the diverse needs of users while implementing flexible and robust access policies.</p>
 
 <p>The different access controls implemented are <strong><em>RBAC , ABAC , XACML(ABAC) &amp; PerBAC</em></strong>.</p>
 
-<p><em>The platform integrates a descriptive file, evaluation tests of each access control model as well as a comparative section according to various criteria of the implemented models. These elements are available at the 
- <strong>the tabs of the navigation bar</strong></em>.</p>
+<p><em>The platform integrates a descriptive file, evaluation tests of each access control model as well as a comparative section according to various criteria of the implemented models. These elements are exposed in
+ <strong>the navigation bar</strong></em>.</p>
     </form>
 </div>
 </body>
