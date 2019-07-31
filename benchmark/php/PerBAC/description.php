@@ -53,47 +53,44 @@
                <br>
         <h2 align="center"><a href="#modèle-pervasive-base-access-control-perbac" id="modèle-pervasive-base-access-control-perbac">Pervasive Base Access Control (PerBAC) Model</a></h2>
         <p>Given the limitations of popular access control models that have been widely adopted in IoT environments,
-            and especially the importance of access controls in such environments, there is a serious need for a solution adapted to IoT. </p>
-        <p>This is how the access control model <em><strong>PerBAC (Pervasive Base Access Control)</strong></em> essentially based on <strong>ABAC</strong> was created. </p>
-        <p>This model uses the concept of attributes</em>, which is very advantageous in decentralized IdO environments, and also includes several <em>abstract concepts</em> and other generic CA models such as <strong>RBAC</strong>.</p>
-        <p>We enrich ABAC not only with additional <em>features of OrBAC and its extensions</em>, but also with <em>an original security approach</em> that meets the basic requirements of IdO.</p>
-        <p>This is a proactive approach, allowing the intelligent use of well-known attributes and abstract entities.
+            and especially the importance of access control models in such environments, there is a serious need for an IoT adapted solution.</p>
+        <p><em><strong>PerBAC (Pervasive Base Access Control)</strong></em> is essentially based on <strong>ABAC</strong>.</p>
+        <p>In the sense that it uses the concept of attributes</em>, which is very advantageous in decentralized IoT environments, and also includes several <em>abstract concepts</em> and other generic AC models such as <strong>RBAC or OrBAC</strong>.</p>
+        <p>We enrich ABAC not only with additional <em>features from OrBAC and its extensions</em>, but also with <em>an original security approach</em> that meets the basic IoT requirements.</p>
+        <p>This presents a proactive approach, allowing smart use of well-known attributes and abstract entities.
         <p><img src="../../images/per1.png" alt="Entités PerBAC" title="Les Entités du modèle PerBAC " style="float: right;"/></p>
-        <p style="float: left">The PerBAC model, since it has OrBAC functionalities, characterizes all its entities by attributes
-            which are characteristics of the subject, object, or under environmental conditions. </p>
-        <p>We also find the notion of abstract attributes (such as role, activity, view and context).</p>
-        <p>PerBAc is a multi-layer model with the concept of attributes as an essential element
-            which makes it <em><strong> more dynamic, proactive and highly capable</em></strong> of meeting the needs of the IdO context. </p>
+        <p style="float: left">PerBAC model, since it has OrBAC features, characterizes all its entities by attributes
+            which are the characteristics of the subject, object, action or under environmental conditions. </p>
+        <p>It also find adds concept of abstract attributes.</p>
         <p>The attributes of the abstract layer are considered logical / abstract attributes with many conditions,
-            while the attributes of the physical layer are physical attributes. </p>
+            while the attributes of the physical layer are called physical attributes. </p>
         <p>The mapping concept in PerBAC
             is relatively simple: if the attributes of a concrete entity (subject, object or action) characterize the corresponding abstract entity (role, view or activity, respectively),
-            then the first one is automatically adapted to it. </p>
-            <p>The attributes of an organization will be both concrete and abstract. </p>
+            then the first one is automatically connected to it. </p>
         <p>The decision to authorize or deny access to a subject for a requested resource (object) is made according to the illustrative figure below
         <p><img src="../../images/per2.png" alt="Processus decision PerBAC" title="Processus de decision PerBAC" style="float: left; margin-right: 20px;width: 780px"/></p>
         <ol>
             <li>
-                <p>The object <em>s</em> first sends a request <strong>REQ (org, s, o, a)</strong> to an object <em>o</em> requested the on which it wants to perform an action <em>a</em>.
+                <p>The object <em>s</em> first sends a request <strong>REQ (org, s, o, a)</strong> to an object <em>o</em> in order to perform an action <em>a</em>.
                     This request from the organization <em>org</em> contains the requested resource, subject, object and action specifications. </p>
             </li>
             <li>
                 <p>The request is received by the <strong>PEP</strong> and then redirected to the <strong>PDP</strong> after extracting some global attributes
                     also referred to as environmental attributes <em>(att)</em> . <strong>PDP</strong> sends a request to <strong>PIP</strong> for entity attributes
                     that he just received.
-                    Once these are obtained, the request will be forwarded to the <em>correspondence function
+                    Once these ones are obtained, the request will be forwarded to the <em>correspondence function
                         to concatenate</em> concrete and abstract entities. </p>
             </li>
             <li>
                 <p>Now that all necessary information on all stakeholders has been collected,
-                    the <strong>PDP</strong> seeks the <em>AC</em>policy of the organization and makes the right decision</em> on the basis of the information processed.
-                    This decision is then sent to the <strong>PEP</strong>, who informs the requesting subject <em>/em>.</p>
+                    the <strong>PDP</strong> seeks the <em>AC</em>policy of the organization and makes the right decision</em> on the basis of the processed information.
+                    This decision is then sent to the <strong>PEP</strong>, which informs the requesting subject.</p>
             </li>
         </ol>
         <p>Most of the time, central nodes play the role of PEP for their end nodes,
-            At the less constrained layer, the computation/unloading layer will have a cloud component or a dedicated server.
-            This component fulfills the roles of PDP / PIP / PAP and can correspond to different attributes to speed up the decision-making process. </p>
-        <p>For the implementation of the model within our platform <em><strong>IoT Smart Parking</strong></em> we followed the following diagrams: </p>
+            At the less constrained layer, the computation/offloading layer will have a cloud component or a dedicated server.
+            This component fulfills the roles of PDP / PIP / PAP and can speed up the decision-making process. </p>
+        <p>For the implementation of the model within our platform <em><strong>IoT Smart Parking</strong></em> we followed the following diagrams : </p>
         <p>Our intelligent car park with a large number of parking spaces has only one entrance and one exit. In addition,
             parking spaces are divided into several domains or zones, each of which is managed by a central node. </p>
         <p>We will consider two zones: <em><strong>a Standard Zone</strong></em> which is accessible to all (public) within the framework of a public contract, and a <em><strong>Privileged Access Zone</strong></em> .</p>
