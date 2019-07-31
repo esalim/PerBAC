@@ -51,18 +51,17 @@
     <div class="login-form">
        <br>
         <h2 align="center"><a href="#modèle-attribute-based-access-control-abac" id="modèle-attribute-based-access-control-abac">Attribute Based Access Control (ABAC) Model</a></h2>
-        <p>Attribute-Based Access Control (ABAC), also known as policy-based access control, 
-        defines access control in which access rights are granted to users through 
+        <p>Attribute-Based Access Control (ABAC) 
+        defines a model in which access rights are granted to users through 
         the use of policies that combine the attributes together.</p>
-        <p>This is where you can <em><strong>dynamically evaluate</strong></em> digital security policies against <em><strong>relevant attribute values</strong></em> and determine whether a user's request will <em><strong>be allowed or not</strong></em>.</p>
-        <p>Unlike role-based access control (RBAC), the main difference with ABAC is the concept of policies that express <em><strong>a complex set of Boolean rules</strong></em>
-        that evaluate many different attributes.</p>
+        <p>This is where you can <em><strong>dynamically evaluate</strong></em> digital security policies against <em><strong>relevant attribute values</strong></em> and determine whether a user's access request will <em><strong>be allowed or not</strong></em>.</p>
+        <p>Unlike role-based access control (RBAC), ABAC is mainly based on the concept of policies that express <em><strong>a complex set of boolean rules</strong></em>
+        evaluating many different attributes.</p>
         <p> ABAC operates according to the following architecture:</p>
         <ol>
             <li>
-                <p><em><strong> PEP or Politique Enforcement Point :</strong></em> It is responsible for protecting the data and applications on which ABAC is to be applied. The PEP inspects the request and then generates an authorization 
-                request that will be sent to the PDP. The PDP decision or 
-                point policy is the brain of architecture. This is the part that evaluates 
+                <p><em><strong> PEP or Policy Enforcement Point :</strong></em> It is responsible for protecting the data and applications on which ABAC is to be applied. The PEP inspects the request and then generates an authorization 
+                request that will be sent to the PDP. The PDP or policy decision point is the brain of the architecture. This is the part that evaluates 
                 incoming requests against the policies that it has been configured with. The PDP returns a Permit / Deny decision.</p>
             </li>
             <li>
@@ -71,11 +70,11 @@
         </ol>
         <ul>
             <br>
-            <li><strong>Subject attributes</strong> that describe the user trying to age eg access, authorization, role ...</li>
+            <li><strong>Subject attributes</strong> that describe the user E.g age </li>
             <br>
-            <li><strong>Action attributes</strong> that describe the attempted action of reading for example, delete, view, approve ...</li>
+            <li><strong>Action attributes</strong> that describe the attempted action of : read, delete, view, approve, etc ...</li>
             <br>
-            <li><strong> Objets attributes</strong> that describe the object (or resource) being accessible for example the type of object (medical file, account banking ...), department, classification or sensitivity, location ...</li>
+            <li><strong> Objets attributes</strong> that describe the object (or resource) ; for example the type of object (medical file, account banking ...), department, classification or sensitivity, location ...</li>
             <br>
             <li><strong> Contextual (environmental) attributes</strong> that deal with the time, place, or dynamic aspects of the access control scenario.</li>
         <br>
@@ -87,23 +86,22 @@
         <br>
         <p align="center"><img src="../../images/authorizationdiagram.png" height="420"  width="820" alt="ABAC Modèle" title="ABAC Modèle d'acces " /></p>
         <br>
-        <p>As shown in the figure above, requests for access to a resource a resource 
-        are intercepted by the policy's point of application (PEP) and redirected 
-        to a policy / political decision-making point service (PDP / PDS). The requests will
+        <p>As shown in the figure above, requests are intercepted by the (PEP) and redirected 
+        to the (PDP). The requests will
          be evaluated in real time, following a policy of rules that support the Boolean logic, 
-         in which the rules contain "SI, then" loops about the (user) who makes the request, the resource, and the action.</p>
-        <p>For the implementation of the model in our <em><strong>IoT Smart Parking</strong></em> we used an online database (storage of available seats) and <a href="https://docs.zendframework.com/zend-permissions-rbac/intro/"><em><code>Casbin(PHP)</code></em></a> ,
+         in which the rules contain "If, then" loops about the subject, the resource, and the action.</p>
+        <p>As an implementation of the model in our <em><strong>IoT Smart Parking</strong></em> we used an online database (storage of available seats) and <a href="https://docs.zendframework.com/zend-permissions-rbac/intro/"><em><code>Casbin(PHP)</code></em></a> ,
         a powerful and efficient open source access control library running following a <em><strong>.conf</strong></em> file containing all of our rules and a <em><strong>.csv</strong></em> file (attributes database) that will do will be compared to data from the database in lineages.</p>
         <p> More information from diagram of our model :</p>
         <br>
         <p align="center"><img src="../../images/abacdec.PNG" height="620"  width="920" alt="ABAC Diagramme" title="ABAC Politique d'acces " /></p>
         <br>
-        <p>ABAC is considered a "next generation" because it offers
-            <em><strong>a dynamic, contextual and risk-based approach.</strong></em>It is a intelligent access control 
+        <p>ABAC is considered a "next generation" model because its
+            <em><strong> dynamic, contextual and risk-based approach.</strong></em>Smart access control 
             to resources to define access control policies that include attributes 
-            specific to many different information systems<em><strong>to resolve and ensure effective regulatory compliance</strong></em>,
+            specific to many different information systems <em><strong>to resolve and ensure effective regulatory compliance</strong></em>,
             as well as enable businesses to to be flexible in their implementation based on their existing infrastructure.</p>
-            <p><em>We will find the implementation on our IoT Smart Parking platform thanks to the section <em><strong><a href="abac.php">Test</a> </strong></em></em></em></p>
+            <p><em>We will find the implementation on our Smart Parking platform in the section <em><strong><a href="abac.php">Test</a> </strong></em></em></em></p>
 <br>
     </div>
 </div>
